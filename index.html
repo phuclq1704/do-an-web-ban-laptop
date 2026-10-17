@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LapTop Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><!--Phần đầu trang-->
+        <h1>Cửa hàng LapTop</h1>
+        <p>Chọn chiếc LapTop phù hợp với bạn</p>
+    </header>
+    <nav>
+        <a href="#san-pham"> Sản phẩm</a>
+        <a href="#gioi-thieu">Giới thiệu</a>
+    </nav>
+    <main>
+        <section id="san-pham">
+            <h2>Sản Phẩm</h2>
+            <form id="tim-kiem">
+                <label for="ten-laptop">Tên laptop:</label>
+                <input type="search"
+                       id="ten-laptop"
+                       placeholder="Ví dụ:vivobook">
+                <button type="submit">Tìm kiếm</button>
+            </form>
+            <article>
+                <h3> ASUS Vivobook 14 X1404MA-EB027W</h3>
+                <img src="images/vivobook14.jpn.webp"
+                     alt="Ảnh minh họa ASUS Vivobook 14 màu bạc"
+                     width="240">
+                <p>Laptop màu bạc,phù hợp học tập và làm việc.</p>
+                <ul>
+                    <li>CPU: Intel Core 3 304</li>
+                    <li>RAM: 8GB</li>
+                    <li>SSD:512 GB</li>
+                    <li>Màn hình: 14 inch FHD</li>
+                    <li>Hệ điều hành:Windows 11</li>
+                </ul>
+                <p>Giá tham khảo: <strong>17.890.000 đ</strong></p>
+                <a href="chi-tiet.html">Xem chi tiết sản phẩm</a>
+            </article>
+            <article>
+                <h3>Laptop văn phòng B2</h3>
+                <p>Phù hợp với các công việc hằng ngày</p>
+                <p>Giá: <strong>15.490.000 đ</strong></p>
+            </article>
+        </section>
+        <section id="gioi-thieu">
+            <h2>Giới thiệu</h2>
+            <p>Cửa hàng chuyên bán laptop phục vụ học tập và làm việc.</p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
