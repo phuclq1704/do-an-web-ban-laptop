@@ -235,3 +235,22 @@ th {
     padding: 6px 10px;
     background-color: white;
 }
+.khu-vuc-tai-khoan {
+    max-width: 420px;
+}
+
+.khu-vuc-tai-khoan label {
+    display: block;
+    margin-top: 12px;
+}
+
+.khu-vuc-tai-khoan input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 8px;
+}
+
+.khu-vuc-tai-khoan form button {
+    margin-top: 16px;
+}

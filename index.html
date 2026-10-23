@@ -24,8 +24,8 @@
             <p>Chọn chiếc LapTop phù hợp với bạn</p>
         </div>
         <div class="lien-ket-header">
-            <a href="dang-ky.html">Đăng ký</a>
-            <a href="dang-nhap.html">Đăng nhập</a>
+            <a id="nut-dang-ky" href="#dang-ky">Đăng ký</a>
+            <a id="nut-dang-nhap" href="#dang-nhap">Đăng nhập</a>
             <a href="gio-hang.html">Xem giỏ hàng</a>
         </div>
     </header>
@@ -174,6 +174,43 @@
             <h2>Giới thiệu</h2>
             <p>Cửa hàng chuyên bán laptop phục vụ học tập và làm việc.</p>
         </section>
+        <!--Đăng ký đăng nhập-->
+        <section id="dang-ky" class="khu-vuc-tai-khoan" hidden>
+            <h2>Đăng ký</h2>
+            <form id="form-dang-ky">
+                <label for="ho-ten-dang-ky">Họ và tên</label>
+                <input id="ho-ten-dang-ky" type="text">
+
+                <label for="email-dang-ky">Email</label>
+                <input id="email-dang-ky" type="email">
+
+                <label for="mat-khau-dang-ky">Mật khẩu</label>
+                <input id="mat-khau-dang-ky" type="password">
+
+                <label for="nhap-lai-mat-khau">Nhập lại mật khẩu</label>
+                <input id="nhap-lai-mat-khau" type="password">
+
+                <button type="button">Tạo tài khoản</button>
+            </form>
+            <button type="button" class="quay-lai-danh-sach">
+                Quay về danh sách sản phẩm
+            </button>
+        </section>
+        <section id="dang-nhap" class="khu-vuc-tai-khoan" hidden>
+            <h2>Đăng nhập</h2>
+            <form id="form-dang-nhap">
+                <label for="email-dang-nhap">Email</label>
+                <input id="email-dang-nhap" type="email">
+
+                <label for="mat-khau-dang-nhap">Mật khẩu</label>
+                <input id="mat-khau-dang-nhap" type="password">
+
+                <button type="button">Đăng nhập</button>
+            </form>
+            <button type="button" class="quay-lai-danh-sach">
+                Quay về danh sách sản phẩm
+            </button>
+        </section>
         <!-- Phần chi tiết laptop Vivobook 14 -->
         <section id="chi-tiet-vivobook-14" class="chi-tiet-san-pham" hidden>
             <h2>ASUS Vivobook 14 X1404MA-EB027W</h2>
@@ -314,7 +351,8 @@
                     </tr>
                     <tr>
                         <th>Cổng kết nối</th>
-                        <td>1 USB 3.2 Gen 1 Type-C; 1 USB 3.2 Gen 1 Type-A; 1 USB 2.0 Type-A; HDMI 1.4; jack tai nghe 3,5 mm; cổng nguồn DC-in</td>
+                        <td>1 USB 3.2 Gen 1 Type-C; 1 USB 3.2 Gen 1 Type-A; 1 USB 2.0 Type-A; HDMI 1.4; jack tai nghe
+                            3,5 mm; cổng nguồn DC-in</td>
                     </tr>
                     <tr>
                         <th>Webcam</th>
@@ -343,14 +381,10 @@
         <!-- Chi tiết laptop Acer Aspire Lite 15 -->
         <section id="chi-tiet-acer" class="chi-tiet-san-pham" hidden>
             <h2>Acer Aspire Lite 15 AL15-49P-R6XX</h2>
-            <img src="images/acer-aspire-lite-15.webp"
-                 alt="Laptop Acer Aspire Lite 15"
-                 width="240">
+            <img src="images/acer-aspire-lite-15.webp" alt="Laptop Acer Aspire Lite 15" width="240">
 
             <p>Giá tham khảo: <strong>18.690.000 đ</strong></p>
-            <button type="button"
-                    class="them-vao-gio"
-                    data-ma="NX.DRZSV.002">
+            <button type="button" class="them-vao-gio" data-ma="NX.DRZSV.002">
                 Thêm vào giỏ hàng
             </button>
 
@@ -386,7 +420,8 @@
                     </tr>
                     <tr>
                         <th>Cổng kết nối</th>
-                        <td>2 USB Type-C; 1 USB 3.2 Type-A; 1 USB 2.0 Type-A; HDMI 1.4; khe thẻ microSD; jack tai nghe 3,5 mm</td>
+                        <td>2 USB Type-C; 1 USB 3.2 Type-A; 1 USB 2.0 Type-A; HDMI 1.4; khe thẻ microSD; jack tai nghe
+                            3,5 mm</td>
                     </tr>
                     <tr>
                         <th>Kết nối không dây</th>
@@ -427,14 +462,10 @@
         <!-- Chi tiết laptop MSI Modern 15 -->
         <section id="chi-tiet-msi" class="chi-tiet-san-pham" hidden>
             <h2>MSI Modern 15 F13MG (667VN_16GB)</h2>
-            <img src="images/msi-modern-15.jpg"
-                 alt="Laptop MSI Modern 15 màu bạc"
-                 width="240">
+            <img src="images/msi-modern-15.jpg" alt="Laptop MSI Modern 15 màu bạc" width="240">
 
             <p>Giá tham khảo: <strong>19.190.000 đ</strong></p>
-            <button type="button"
-                    class="them-vao-gio"
-                    data-ma="667VN_16GB">
+            <button type="button" class="them-vao-gio" data-ma="667VN_16GB">
                 Thêm vào giỏ hàng
             </button>
 
@@ -474,7 +505,8 @@
                     </tr>
                     <tr>
                         <th>Cổng kết nối</th>
-                        <td>1 USB 3.2 Gen 2 Type-C (hỗ trợ DisplayPort và Power Delivery); 3 USB 3.2 Gen 1 Type-A; HDMI; RJ45; khe thẻ microSD; jack tai nghe/micro</td>
+                        <td>1 USB 3.2 Gen 2 Type-C (hỗ trợ DisplayPort và Power Delivery); 3 USB 3.2 Gen 1 Type-A; HDMI;
+                            RJ45; khe thẻ microSD; jack tai nghe/micro</td>
                     </tr>
                     <tr>
                         <th>Webcam</th>
@@ -624,7 +656,8 @@
                     </tr>
                     <tr>
                         <th>Cổng kết nối</th>
-                        <td>1 USB 3.2 Gen 1 Type-A; 1 USB 2.0 Type-A; 1 USB 3.2 Gen 1 Type-C chỉ truyền dữ liệu; HDMI 1.4; khe thẻ SD; jack tai nghe</td>
+                        <td>1 USB 3.2 Gen 1 Type-A; 1 USB 2.0 Type-A; 1 USB 3.2 Gen 1 Type-C chỉ truyền dữ liệu; HDMI
+                            1.4; khe thẻ SD; jack tai nghe</td>
                     </tr>
                     <tr>
                         <th>Kết nối không dây</th>

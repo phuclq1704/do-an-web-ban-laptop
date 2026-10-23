@@ -93,14 +93,38 @@ const khuVucGioiThieu = document.getElementById("gioi-thieu");
 const cacKhuVucChiTiet = document.querySelectorAll(".chi-tiet-san-pham");
 const cacLienKetChiTiet = document.querySelectorAll(".xem-chi-tiet");
 const cacNutQuayLai = document.querySelectorAll(".quay-lai-danh-sach");
-
+const khuVucDangKy=document.getElementById("dang-ky");
+const khuVucDangNhap=document.getElementById("dang-nhap");
+const lienKetDangKy=document.getElementById("nut-dang-ky");
+const lienKetDangNhap=document.getElementById("nut-dang-nhap");
 function hienDanhSach() {
     for (const khuVucChiTiet of cacKhuVucChiTiet) {
         khuVucChiTiet.hidden = true;
     }
+    khuVucDangKy.hidden=true;
+    khuVucDangNhap.hidden=true;
     khuVucSanPham.hidden = false;
     khuVucGioiThieu.hidden = false;
 }
+function hienKhuVucTaiKhoan(khuVucCanHien){
+    for(const khuVucChiTiet of cacKhuVucChiTiet){
+        khuVucChiTiet.hidden=true;
+    }
+    khuVucSanPham.hidden=true;
+    khuVucGioiThieu.hidden=true;
+    khuVucDangKy.hidden=true;
+    khuVucDangNhap.hidden=true;
+    khuVucCanHien.hidden=false;
+    khuVucCanHien.scrollIntoView();
+}
+lienKetDangKy.addEventListener("click",function(suKien){
+    suKien.preventDefault();
+    hienKhuVucTaiKhoan(khuVucDangKy);
+});
+lienKetDangNhap.addEventListener("click",function(suKien){
+    suKien.preventDefault();
+    hienKhuVucTaiKhoan(khuVucDangNhap);
+});
 
 for (const lienKetChiTiet of cacLienKetChiTiet) {
     lienKetChiTiet.addEventListener("click", function (suKien) {
