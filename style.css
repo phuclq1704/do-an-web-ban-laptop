@@ -1,48 +1,237 @@
-body{
-    font-family: Arial,sans-serif;
-    background-color:#f4f4f4;
-    color:#222222;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222222;
 }
-header{
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
     background-color: #174a7e;
-    color:white;
-    padding:20px;
-    text-align:center;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
-nav{
-    background-color:#e6eef7;
-    padding:12px;
-    text-align:center;
+
+.tim-kiem-dau-trang {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: flex-end;
 }
-nav a{
-    color:#174a7e;
-    text-decoration:none;
-    margin:0 10px;
+
+.tim-kiem-dau-trang input,
+.tim-kiem-dau-trang select {
+    box-sizing: border-box;
+    padding: 4px 6px;
 }
-section{
-    background-color:white;
-    padding:20px;
-    margin:20px auto;
-    max-width:900px;
+
+.tim-kiem-dau-trang input {
+    width: 150px;
 }
-article{
+
+.tim-kiem-dau-trang select {
+    width: 120px;
+}
+
+.tim-kiem-dau-trang button {
+    padding: 4px 8px;
+}
+
+nav {
+    background-color: #e6eef7;
+    padding: 12px;
+    text-align: center;
+}
+
+nav a {
+    color: #174a7e;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+article {
     border: 1px solid #cccccc;
-    padding:15px;
-    margin-top:15px;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 20px;
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#tim-kiem {
+    margin-bottom: 16px;
+}
+
+#tim-kiem label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+#tim-kiem input,
+#tim-kiem select {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+#tim-kiem button {
+    margin-top: 12px;
+}
+
+#danh-sach-san-pham {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+#danh-sach-san-pham article {
+    box-sizing: border-box;
+    width: 280px;
+    flex-grow: 1;
+    min-width: 0;
+    margin-top: 0; 
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+#danh-sach-san-pham article:hover {
+    background-color: #89bff4;
+    box-shadow:  4px 4px 6px #104e8b;
+}
+
+#danh-sach-san-pham article img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /*CSS Phần Chi tiết sản phẩm*/
-table{
-    width:100%;
-    border-collapse:collapse;
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
-th,td{
-    border:1px solid #dddddd;
+
+th,
+td {
+    border: 1px solid #dddddd;
     padding: 10px;
-    text-align:left;
+    text-align: left;
 }
-th{
-    width:30%;
+
+th {
+    width: 30%;
     background-color: #f1f1f1;
 }
-/*CSS Phần Chi tiết sản phẩm*/
 
+.bang-cuon {
+    overflow-x: auto;
+}
+
+.bang-cuon table {
+    min-width: 600px;
+}
+
+/*CSS Phần Chi tiết sản phẩm*/
+.o-tim-kiem {
+    display: flex;
+    align-items: center;
+    width: 280px;
+    max-width: 100%;
+    height: 30px;
+    padding: 0 12px;
+    background-color: white;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* Nút kính lúp nằm bên trong ô tìm kiếm */
+.o-tim-kiem button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: none;
+    padding: 0;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.o-tim-kiem button img {
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+
+.o-tim-kiem input {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: 16px;
+}
+
+.o-tim-kiem input::placeholder {
+    color: #b8b8be;
+}
+
+/* Biểu tượng của mục lọc theo tiêu chí */
+#tim-kiem summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    cursor: pointer;
+}
+
+#tim-kiem summary::-webkit-details-marker {
+    display: none;
+}
+
+#tim-kiem summary img {
+    width: 18px;
+    height: 18px;
+}
+
+.timkiem1 {
+    border-radius: 5px;
+}
+
+.lien-ket-header {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 8px;
+    position: relative;
+    left: 14px;
+    top: 14px;
+}
+
+.lien-ket-header a {
+    color: rgb(56, 54, 54);
+    text-decoration: none;
+    border: 1px solid rgb(216, 209, 209);
+    border-radius: 6px;
+    padding: 6px 10px;
+    background-color: white;
+}

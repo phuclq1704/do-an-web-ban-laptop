@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,24 @@
 </head>
 <body>
     <header><!--Phần đầu trang-->
-        <h1>Cửa hàng LapTop</h1>
-        <p>Chọn chiếc LapTop phù hợp với bạn</p>
+        <div class="tim-kiem-dau-trang">
+            <div id="tk2" class="o-tim-kiem">
+                <button type="submit" form="tim-kiem" aria-label="Tìm kiếm">
+                    <img src="images/magnifying-glass-solid.png" alt="">
+                </button>
+                <input type="search" id="ten-laptop" form="tim-kiem" aria-label="Tên laptop"
+                    placeholder="Bạn muốn mua laptop nào?">
+            </div>
+        </div>
+        <div>
+            <h1>Cửa hàng LapTop</h1>
+            <p>Chọn chiếc LapTop phù hợp với bạn</p>
+        </div>
+        <div class="lien-ket-header">
+            <a href="dang-ky.html">Đăng ký</a>
+            <a href="dang-nhap.html">Đăng nhập</a>
+            <a href="gio-hang.html">Xem giỏ hàng</a>
+        </div>
     </header>
     <nav>
         <a href="#san-pham"> Sản phẩm</a>
@@ -19,33 +36,136 @@
         <section id="san-pham">
             <h2>Sản Phẩm</h2>
             <form id="tim-kiem">
-                <label for="ten-laptop">Tên laptop:</label>
-                <input type="search"
-                       id="ten-laptop"
-                       placeholder="Ví dụ:vivobook">
-                <button type="submit">Tìm kiếm</button>
+                <details>
+                    <summary>
+                        <img src="images/filter-solid-full.svg" alt="">
+                        Chọn theo tiêu chí
+                    </summary>
+                    <label for="loai-laptop">Loại laptop:</label>
+                    <select id="loai-laptop">
+                        <option value="">Tất cả loại</option>
+                        <option value="hoc-tap">Học tập</option>
+                        <option value="van-phong">Văn phòng</option>
+                    </select>
+                    <label for="gia-tu">Giá từ đ:</label>
+                    <input type="number" id="gia-tu" placeholder="Ví dụ: 15000000" min="0">
+                    <label for="gia-den">Giá đến đ:</label>
+                    <input type="number" id="gia-den" placeholder="Ví dụ:20000000" min="0">
+                    <button class="timkiem1" type="submit">Tìm kiếm</button>
+                    <button class="timkiem1" type="button" id="xoa-bo-loc">Xoá bộ lọc</button>
+                </details>
             </form>
-            <article>
-                <h3> ASUS Vivobook 14 X1404MA-EB027W</h3>
-                <img src="images/vivobook14.jpn.webp"
-                     alt="Ảnh minh họa ASUS Vivobook 14 màu bạc"
-                     width="240">
-                <p>Laptop màu bạc,phù hợp học tập và làm việc.</p>
-                <ul>
-                    <li>CPU: Intel Core 3 304</li>
-                    <li>RAM: 8GB</li>
-                    <li>SSD:512 GB</li>
-                    <li>Màn hình: 14 inch FHD</li>
-                    <li>Hệ điều hành:Windows 11</li>
-                </ul>
-                <p>Giá tham khảo: <strong>17.890.000 đ</strong></p>
-                <a href="chi-tiet.html">Xem chi tiết sản phẩm</a>
-            </article>
-            <article>
-                <h3>Laptop văn phòng B2</h3>
-                <p>Phù hợp với các công việc hằng ngày</p>
-                <p>Giá: <strong>15.490.000 đ</strong></p>
-            </article>
+            <p id="khong-tim-thay" hidden>Không tìm thấy laptop phù hợp</p>
+            <div id="danh-sach-san-pham">
+                <article data-loai="hoc-tap" data-gia="17890000">
+                    <h3> ASUS Vivobook 14 X1404MA-EB027W</h3>
+                    <img src="images/vivobook14.jpn.webp" alt="Ảnh minh họa ASUS Vivobook 14 màu bạc" width="240">
+                    <p>Laptop màu bạc,phù hợp học tập và làm việc.</p>
+                    <ul>
+                        <li>CPU: Intel Core 3 304</li>
+                        <li>RAM: 8GB</li>
+                        <li>SSD:512 GB</li>
+                        <li>Màn hình: 14 inch FHD</li>
+                        <li>Hệ điều hành:Windows 11</li>
+                    </ul>
+                    <p>Giá tham khảo: <strong>17.890.000 đ</strong></p>
+                    <div style="margin:10px"><button type="button" class="them-vao-gio" data-ma="X1404MA-EB027W">
+                            Thêm vào giỏ hàng
+                        </button></div>
+                    <a href="chi-tiet.html">Xem chi tiết sản phẩm</a>
+                </article>
+                <article data-loai="van-phong" data-gia="20490000">
+                    <h3>ASUS Vivobook Go 15 E1504FA-BQ374W</h3>
+                    <img src="images/vivobook-go-15.webp" alt="Laptop ASUS Vivobook Go 15 E1504FA-BQ374W" width="240">
+                    <ul>
+                        <li>CPU: AMD Ryzen 5 7520U</li>
+                        <li>RAM: 8 GB</li>
+                        <li>SSD: 512 GB</li>
+                        <li>Màn hình: 15,6 inch Full HD</li>
+                        <li>Hệ điều hành:Windows 11</li>
+                    </ul>
+                    <p>Giá tham khảo: <strong>20.490.000 đ</strong></p>
+                    <div style="margin:10px"><button type="button" class="them-vao-gio" data-ma="E1504FA-BQ374W">
+                            Thêm vào giỏ hàng
+                        </button></div>
+                    <a href="chi-tiet-go-15.html">Xem chi tiết sản phẩm</a>
+                </article>
+                <article data-loai="hoc-tap" data-gia="18690000">
+                    <h3>Acer Aspire Lite 15 AL15-49P-R6XX</h3>
+                    <img src="images/acer-aspire-lite-15.webp" alt="Laptop Acer Aspire Lite 15" width="240">
+                    <p>Phù hợp cho học tập và các công việc hằng ngày.</p>
+                    <ul>
+                        <li>CPU: AMD Ryzen 5 7430U</li>
+                        <li>RAM: 8 GB</li>
+                        <li>SSD: 512 GB</li>
+                        <li>Màn hình: 15,6 inch Full HD</li>
+                    </ul>
+                    <p>Giá tham khảo: <strong>18.690.000 đ</strong></p>
+                    <div style="margin:10px">
+                        <button type="button" class="them-vao-gio" data-ma="NX.DRZSV.002"> Thêm vào giỏ hàng</button>
+                    </div>
+                    <a href="Acer-Aspire-Lite-15.html">Xem chi tiết tại đây</a>
+                </article>
+                <article data-loai="van-phong" data-gia="19190000">
+                    <h3>MSI Modern 15 F13MG (667VN_16GB)</h3>
+                    <img src="images/msi-modern-15.jpg" alt="Laptop MSI Modern 15 màu bạc" width="240">
+                    <p>Phù hợp cho công việc văn phòng và sử dụng hằng ngày.</p>
+                    <ul>
+                        <li>CPU: Intel Core i5-1334U</li>
+                        <li>RAM: 16 GB</li>
+                        <li>SSD: 512 GB</li>
+                        <li>Màn hình: 15,6 inch Full HD</li>
+                    </ul>
+                    <p>Giá tham khảo: <strong>19.190.000 đ</strong></p>
+                    <div style="margin:10px">
+                        <button type="button" class="them-vao-gio" data-ma="667VN_16GB">
+                            Thêm vào giỏ hàng
+                        </button>
+                    </div>
+                    <a href="MSI-Modern-15.html">Xem chi tiết tại đây</a>
+                </article>
+                <article data-loai="hoc-tap" data-gia="21990000">
+                    <h3>HP 15 fc0023AU (D0BH1PA)</h3>
+                    <img src="images/hp-15-fc0023au.jpg" alt="Laptop HP 15 fc0023AU" width="240">
+                    <p>Phù hợp cho học tập và các công việc hằng ngày.</p>
+                    <ul>
+                        <li>CPU: AMD Ryzen 5 7520U</li>
+                        <li>RAM: 16 GB</li>
+                        <li>SSD: 512 GB</li>
+                        <li>Màn hình: 15,6 inch Full HD</li>
+                    </ul>
+                    <p>Giá tham khảo: <strong>21.990.000 đ</strong></p>
+                    <div style="margin:10px">
+                        <button type="button" class="them-vao-gio" data-ma="D0BH1PA">
+                            Thêm vào giỏ hàng
+                        </button>
+                    </div>
+                    <a href="chi-tiet-hp.html">Xem chi tiết sản phẩm</a>
+                </article>
+                <article data-loai="van-phong" data-gia="23390000">
+                    <h3>Dell 15 DC15250 (71092479)</h3>
+                    <img src="images/dell-15-dc15250.jpg" alt="Laptop Dell 15 DC15250 màu bạc" width="240">
+                    <p>Phù hợp cho công việc văn phòng và sử dụng hằng ngày.</p>
+                    <ul>
+                        <li>CPU: Intel Core i5-1334U</li>
+                        <li>RAM: 16 GB</li>
+                        <li>SSD: 512 GB</li>
+                        <li>Màn hình: 15,6 inch Full HD</li>
+                    </ul>
+                    <p>Giá tham khảo: <strong>23.390.000 đ</strong></p>
+                    <div style="margin:10px">
+                        <button type="button" class="them-vao-gio" data-ma="71092479">
+                            Thêm vào giỏ hàng
+                        </button>
+                    </div>
+                    <a href="chi-tiet-dell.html">Xem chi tiết sản phẩm</a>
+                </article>
+            </div>
+            <div id="phan-trang">
+                <button type="button" id="trang-truoc">Trang trước</button>
+                <span id="so-trang">Trang 1</span>
+                <button type="button" id="trang-sau">Trang sau</button>
+            </div>
         </section>
         <section id="gioi-thieu">
             <h2>Giới thiệu</h2>
@@ -54,4 +174,5 @@
     </main>
     <script src="script.js"></script>
 </body>
+
 </html>
