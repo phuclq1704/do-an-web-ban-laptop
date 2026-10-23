@@ -49,6 +49,7 @@ formTimKiem.addEventListener("submit", function (suKien) {
     }
     trangHienTai = 1;
     hienThiTrang();
+    hienDanhSach();
     document.getElementById("san-pham").scrollIntoView();
 });
 nutXoaBoLoc.addEventListener("click",function(){
@@ -85,3 +86,41 @@ trangSau.addEventListener("click", function () {
     hienThiTrang();
 });
 hienThiTrang();
+
+// Chuyển giữa danh sách và chi tiết sản phẩm trong cùng trang index.html.
+const khuVucSanPham = document.getElementById("san-pham");
+const khuVucGioiThieu = document.getElementById("gioi-thieu");
+const cacKhuVucChiTiet = document.querySelectorAll(".chi-tiet-san-pham");
+const cacLienKetChiTiet = document.querySelectorAll(".xem-chi-tiet");
+const cacNutQuayLai = document.querySelectorAll(".quay-lai-danh-sach");
+
+function hienDanhSach() {
+    for (const khuVucChiTiet of cacKhuVucChiTiet) {
+        khuVucChiTiet.hidden = true;
+    }
+    khuVucSanPham.hidden = false;
+    khuVucGioiThieu.hidden = false;
+}
+
+for (const lienKetChiTiet of cacLienKetChiTiet) {
+    lienKetChiTiet.addEventListener("click", function (suKien) {
+        suKien.preventDefault();
+        const idChiTiet = lienKetChiTiet.getAttribute("href").slice(1);
+        const khuVucChiTiet = document.getElementById(idChiTiet);
+        khuVucSanPham.hidden = true;
+        khuVucGioiThieu.hidden = true;
+        khuVucChiTiet.hidden = false;
+        khuVucChiTiet.scrollIntoView();
+    });
+}
+
+for (const nutQuayLai of cacNutQuayLai) {
+    nutQuayLai.addEventListener("click", function () {
+        hienDanhSach();
+        khuVucSanPham.scrollIntoView();
+    });
+}
+
+for (const lienKetMenu of document.querySelectorAll("nav a")) {
+    lienKetMenu.addEventListener("click", hienDanhSach);
+}
