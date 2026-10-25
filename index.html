@@ -10,24 +10,30 @@
 
 <body>
     <header><!--Phần đầu trang-->
+
+        <div class="tenCuaHang">
+            <h1>Cửa hàng LapTop</h1>
+        </div>
+        <a class="danh-muc" href="#tim-kiem">☰ Danh mục</a>
+
         <div class="tim-kiem-dau-trang">
             <div id="tk2" class="o-tim-kiem">
+                <input type="search" id="ten-laptop" form="tim-kiem" aria-label="Tên laptop"
+                    placeholder="Bạn muốn mua laptop nào?">
                 <button type="submit" form="tim-kiem" aria-label="Tìm kiếm">
                     <img src="images/magnifying-glass-solid.png" alt="">
                 </button>
-                <input type="search" id="ten-laptop" form="tim-kiem" aria-label="Tên laptop"
-                    placeholder="Bạn muốn mua laptop nào?">
             </div>
         </div>
-        <div>
-            <h1>Cửa hàng LapTop</h1>
-            <p>Chọn chiếc LapTop phù hợp với bạn</p>
-        </div>
+
         <div class="lien-ket-header">
+            <a id="icon-gio-hang" href="gio-hang.html">
+                <img src="images/cart-shopping-solid-full.svg" alt="">
+            </a>
             <a id="nut-dang-ky" href="#dang-ky">Đăng ký</a>
             <a id="nut-dang-nhap" href="#dang-nhap">Đăng nhập</a>
-            <a href="gio-hang.html">Xem giỏ hàng</a>
         </div>
+
     </header>
     <nav>
         <a href="#san-pham"> Sản phẩm</a>
@@ -37,137 +43,382 @@
         <section id="san-pham">
             <h2>Sản Phẩm</h2>
             <form id="tim-kiem">
-                <details>
-                    <summary>
-                        <img src="images/filter-solid-full.svg" alt="">
-                        Chọn theo tiêu chí
-                    </summary>
-                    <label for="loai-laptop">Loại laptop:</label>
-                    <select id="loai-laptop">
-                        <option value="">Tất cả loại</option>
-                        <option value="hoc-tap">Học tập</option>
-                        <option value="van-phong">Văn phòng</option>
-                    </select>
-                    <label for="gia-tu">Giá từ đ:</label>
-                    <input type="number" id="gia-tu" placeholder="Ví dụ: 15000000" min="0">
-                    <label for="gia-den">Giá đến đ:</label>
-                    <input type="number" id="gia-den" placeholder="Ví dụ:20000000" min="0">
-                    <button class="timkiem1" type="submit">Tìm kiếm</button>
-                    <button class="timkiem1" type="button" id="xoa-bo-loc">Xoá bộ lọc</button>
-                </details>
+                <fieldset class="nhom-loai-laptop">
+                    <legend>LOẠI LAPTOP</legend>
+
+                    <label class="lua-chon-loai">
+                        <input type="radio" name="loai-laptop" value="" checked>
+                        <span>Tất cả laptop</span>
+                    </label>
+
+                    <label class="lua-chon-loai">
+                        <input type="radio" name="loai-laptop" value="hoc-tap">
+                        <span>Laptop học tập</span>
+                    </label>
+
+                    <label class="lua-chon-loai">
+                        <input type="radio" name="loai-laptop" value="van-phong">
+                        <span>Laptop văn phòng</span>
+                    </label>
+                </fieldset>
+                <fieldset class="nhom-muc-gia">
+                    <legend>MỨC GIÁ</legend>
+
+                    <label class="lua-chon-gia">
+                        <input type="checkbox" name="muc-gia" data-tu="0" data-den="10000000">
+                        <span>Dưới 10 triệu</span>
+                    </label>
+
+                    <label class="lua-chon-gia">
+                        <input type="checkbox" name="muc-gia" data-tu="10000000" data-den="15000000">
+                        <span>10 - 15 triệu</span>
+                    </label>
+
+                    <label class="lua-chon-gia">
+                        <input type="checkbox" name="muc-gia" data-tu="15000000" data-den="20000000">
+                        <span>15 - 20 triệu</span>
+                    </label>
+
+                    <label class="lua-chon-gia">
+                        <input type="checkbox" name="muc-gia" data-tu="20000000" data-den="25000000">
+                        <span>20 - 25 triệu</span>
+                    </label>
+
+                    <label class="lua-chon-gia">
+                        <input type="checkbox" name="muc-gia" data-tu="25000000" data-den="30000000">
+                        <span>25 - 30 triệu</span>
+                    </label>
+
+                    <label class="lua-chon-gia">
+                        <input type="checkbox" name="muc-gia" data-tu="30000000">
+                        <span>30 triệu trở lên</span>
+                    </label>
+                </fieldset>
+                <button class="timkiem1" type="button" id="xoa-bo-loc"> 
+                    <img src="images/filter-circle-xmark-solid-full.svg" alt="">
+                    <span>Xóa bộ lọc</span>
+                </button>
             </form>
-            <p id="khong-tim-thay" hidden>Không tìm thấy laptop phù hợp</p>
-            <div id="danh-sach-san-pham">
-                <article data-loai="hoc-tap" data-gia="17890000">
-                    <h3> ASUS Vivobook 14 X1404MA-EB027W</h3>
-                    <img src="images/vivobook14.jpn.webp" alt="Ảnh minh họa ASUS Vivobook 14 màu bạc" width="240">
-                    <p>Laptop màu bạc,phù hợp học tập và làm việc.</p>
-                    <ul>
-                        <li>CPU: Intel Core 3 304</li>
-                        <li>RAM: 8GB</li>
-                        <li>SSD:512 GB</li>
-                        <li>Màn hình: 14 inch FHD</li>
-                        <li>Hệ điều hành:Windows 11</li>
-                    </ul>
-                    <p>Giá tham khảo: <strong>17.890.000 đ</strong></p>
-                    <div style="margin:10px"><button type="button" class="them-vao-gio" data-ma="X1404MA-EB027W">
-                            Thêm vào giỏ hàng
-                        </button></div>
-                    <a class="xem-chi-tiet" href="#chi-tiet-vivobook-14">
-                        Xem chi tiết sản phẩm
-                    </a>
-                </article>
-                <article data-loai="van-phong" data-gia="20490000">
-                    <h3>ASUS Vivobook Go 15 E1504FA-BQ374W</h3>
-                    <img src="images/vivobook-go-15.webp" alt="Laptop ASUS Vivobook Go 15 E1504FA-BQ374W" width="240">
-                    <ul>
-                        <li>CPU: AMD Ryzen 5 7520U</li>
-                        <li>RAM: 8 GB</li>
-                        <li>SSD: 512 GB</li>
-                        <li>Màn hình: 15,6 inch Full HD</li>
-                        <li>Hệ điều hành:Windows 11</li>
-                    </ul>
-                    <p>Giá tham khảo: <strong>20.490.000 đ</strong></p>
-                    <div style="margin:10px"><button type="button" class="them-vao-gio" data-ma="E1504FA-BQ374W">
-                            Thêm vào giỏ hàng
-                        </button></div>
-                    <a class="xem-chi-tiet" href="#chi-tiet-go-15">Xem chi tiết sản phẩm</a>
-                </article>
-                <article data-loai="hoc-tap" data-gia="18690000">
-                    <h3>Acer Aspire Lite 15 AL15-49P-R6XX</h3>
-                    <img src="images/acer-aspire-lite-15.webp" alt="Laptop Acer Aspire Lite 15" width="240">
-                    <p>Phù hợp cho học tập và các công việc hằng ngày.</p>
-                    <ul>
-                        <li>CPU: AMD Ryzen 5 7430U</li>
-                        <li>RAM: 8 GB</li>
-                        <li>SSD: 512 GB</li>
-                        <li>Màn hình: 15,6 inch Full HD</li>
-                    </ul>
-                    <p>Giá tham khảo: <strong>18.690.000 đ</strong></p>
-                    <div style="margin:10px">
-                        <button type="button" class="them-vao-gio" data-ma="NX.DRZSV.002"> Thêm vào giỏ hàng</button>
-                    </div>
-                    <a class="xem-chi-tiet" href="#chi-tiet-acer">Xem chi tiết tại đây</a>
-                </article>
-                <article data-loai="van-phong" data-gia="19190000">
-                    <h3>MSI Modern 15 F13MG (667VN_16GB)</h3>
-                    <img src="images/msi-modern-15.jpg" alt="Laptop MSI Modern 15 màu bạc" width="240">
-                    <p>Phù hợp cho công việc văn phòng và sử dụng hằng ngày.</p>
-                    <ul>
-                        <li>CPU: Intel Core i5-1334U</li>
-                        <li>RAM: 16 GB</li>
-                        <li>SSD: 512 GB</li>
-                        <li>Màn hình: 15,6 inch Full HD</li>
-                    </ul>
-                    <p>Giá tham khảo: <strong>19.190.000 đ</strong></p>
-                    <div style="margin:10px">
-                        <button type="button" class="them-vao-gio" data-ma="667VN_16GB">
-                            Thêm vào giỏ hàng
-                        </button>
-                    </div>
-                    <a class="xem-chi-tiet" href="#chi-tiet-msi">Xem chi tiết tại đây</a>
-                </article>
-                <article data-loai="hoc-tap" data-gia="21990000">
-                    <h3>HP 15 fc0023AU (D0BH1PA)</h3>
-                    <img src="images/hp-15-fc0023au.jpg" alt="Laptop HP 15 fc0023AU" width="240">
-                    <p>Phù hợp cho học tập và các công việc hằng ngày.</p>
-                    <ul>
-                        <li>CPU: AMD Ryzen 5 7520U</li>
-                        <li>RAM: 16 GB</li>
-                        <li>SSD: 512 GB</li>
-                        <li>Màn hình: 15,6 inch Full HD</li>
-                    </ul>
-                    <p>Giá tham khảo: <strong>21.990.000 đ</strong></p>
-                    <div style="margin:10px">
-                        <button type="button" class="them-vao-gio" data-ma="D0BH1PA">
-                            Thêm vào giỏ hàng
-                        </button>
-                    </div>
-                    <a class="xem-chi-tiet" href="#chi-tiet-hp">Xem chi tiết sản phẩm</a>
-                </article>
-                <article data-loai="van-phong" data-gia="23390000">
-                    <h3>Dell 15 DC15250 (71092479)</h3>
-                    <img src="images/dell-15-dc15250.jpg" alt="Laptop Dell 15 DC15250 màu bạc" width="240">
-                    <p>Phù hợp cho công việc văn phòng và sử dụng hằng ngày.</p>
-                    <ul>
-                        <li>CPU: Intel Core i5-1334U</li>
-                        <li>RAM: 16 GB</li>
-                        <li>SSD: 512 GB</li>
-                        <li>Màn hình: 15,6 inch Full HD</li>
-                    </ul>
-                    <p>Giá tham khảo: <strong>23.390.000 đ</strong></p>
-                    <div style="margin:10px">
-                        <button type="button" class="them-vao-gio" data-ma="71092479">
-                            Thêm vào giỏ hàng
-                        </button>
-                    </div>
-                    <a class="xem-chi-tiet" href="#chi-tiet-dell">Xem chi tiết sản phẩm</a>
-                </article>
-            </div>
-            <div id="phan-trang">
-                <button type="button" id="trang-truoc">Trang trước</button>
-                <span id="so-trang">Trang 1</span>
-                <button type="button" id="trang-sau">Trang sau</button>
+            <div class="ket-qua">
+                <p id="khong-tim-thay" hidden>Không tìm thấy laptop phù hợp</p>
+                <div id="danh-sach-san-pham">
+                    <article data-loai="hoc-tap" data-gia="17890000">
+                        <h3> ASUS Vivobook 14 X1404MA-EB027W</h3>
+                        <img src="images/vivobook14.jpn.webp" alt="Ảnh minh họa ASUS Vivobook 14 màu bạc" width="240">
+                        <p>Laptop màu bạc,phù hợp học tập và làm việc.</p>
+                        <ul>
+                            <li>CPU: Intel Core 3 304</li>
+                            <li>RAM: 8GB</li>
+                            <li>SSD:512 GB</li>
+                            <li>Màn hình: 14 inch FHD</li>
+                            <li>Hệ điều hành:Windows 11</li>
+                        </ul>
+                        <p>Giá tham khảo: <strong>17.890.000 đ</strong></p>
+                        <div style="margin:10px"><button type="button" class="them-vao-gio" data-ma="X1404MA-EB027W">
+                                Thêm vào giỏ hàng
+                            </button></div>
+                        <a class="xem-chi-tiet" href="#chi-tiet-vivobook-14">
+                            Xem chi tiết sản phẩm
+                        </a>
+                    </article>
+                    <article data-loai="van-phong" data-gia="20490000">
+                        <h3>ASUS Vivobook Go 15 E1504FA-BQ374W</h3>
+                        <img src="images/vivobook-go-15.webp" alt="Laptop ASUS Vivobook Go 15 E1504FA-BQ374W"
+                            width="240">
+                        <ul>
+                            <li>CPU: AMD Ryzen 5 7520U</li>
+                            <li>RAM: 8 GB</li>
+                            <li>SSD: 512 GB</li>
+                            <li>Màn hình: 15,6 inch Full HD</li>
+                            <li>Hệ điều hành:Windows 11</li>
+                        </ul>
+                        <p>Giá tham khảo: <strong>20.490.000 đ</strong></p>
+                        <div style="margin:10px"><button type="button" class="them-vao-gio" data-ma="E1504FA-BQ374W">
+                                Thêm vào giỏ hàng
+                            </button></div>
+                        <a class="xem-chi-tiet" href="#chi-tiet-go-15">Xem chi tiết sản phẩm</a>
+                    </article>
+                    <article data-loai="hoc-tap" data-gia="18690000">
+                        <h3>Acer Aspire Lite 15 AL15-49P-R6XX</h3>
+                        <img src="images/acer-aspire-lite-15.webp" alt="Laptop Acer Aspire Lite 15" width="240">
+                        <p>Phù hợp cho học tập và các công việc hằng ngày.</p>
+                        <ul>
+                            <li>CPU: AMD Ryzen 5 7430U</li>
+                            <li>RAM: 8 GB</li>
+                            <li>SSD: 512 GB</li>
+                            <li>Màn hình: 15,6 inch Full HD</li>
+                        </ul>
+                        <p>Giá tham khảo: <strong>18.690.000 đ</strong></p>
+                        <div style="margin:10px">
+                            <button type="button" class="them-vao-gio" data-ma="NX.DRZSV.002"> Thêm vào giỏ
+                                hàng</button>
+                        </div>
+                        <a class="xem-chi-tiet" href="#chi-tiet-acer">Xem chi tiết tại đây</a>
+                    </article>
+                    <article data-loai="van-phong" data-gia="19190000">
+                        <h3>MSI Modern 15 F13MG (667VN_16GB)</h3>
+                        <img src="images/msi-modern-15.jpg" alt="Laptop MSI Modern 15 màu bạc" width="240">
+                        <p>Phù hợp cho công việc văn phòng và sử dụng hằng ngày.</p>
+                        <ul>
+                            <li>CPU: Intel Core i5-1334U</li>
+                            <li>RAM: 16 GB</li>
+                            <li>SSD: 512 GB</li>
+                            <li>Màn hình: 15,6 inch Full HD</li>
+                        </ul>
+                        <p>Giá tham khảo: <strong>19.190.000 đ</strong></p>
+                        <div style="margin:10px">
+                            <button type="button" class="them-vao-gio" data-ma="667VN_16GB">
+                                Thêm vào giỏ hàng
+                            </button>
+                        </div>
+                        <a class="xem-chi-tiet" href="#chi-tiet-msi">Xem chi tiết tại đây</a>
+                    </article>
+                    <article data-loai="hoc-tap" data-gia="21990000">
+                        <h3>HP 15 fc0023AU (D0BH1PA)</h3>
+                        <img src="images/hp-15-fc0023au.jpg" alt="Laptop HP 15 fc0023AU" width="240">
+                        <p>Phù hợp cho học tập và các công việc hằng ngày.</p>
+                        <ul>
+                            <li>CPU: AMD Ryzen 5 7520U</li>
+                            <li>RAM: 16 GB</li>
+                            <li>SSD: 512 GB</li>
+                            <li>Màn hình: 15,6 inch Full HD</li>
+                        </ul>
+                        <p>Giá tham khảo: <strong>21.990.000 đ</strong></p>
+                        <div style="margin:10px">
+                            <button type="button" class="them-vao-gio" data-ma="D0BH1PA">
+                                Thêm vào giỏ hàng
+                            </button>
+                        </div>
+                        <a class="xem-chi-tiet" href="#chi-tiet-hp">Xem chi tiết sản phẩm</a>
+                    </article>
+                    <article data-loai="van-phong" data-gia="23390000">
+                        <h3>Dell 15 DC15250 (71092479)</h3>
+                        <img src="images/dell-15-dc15250.jpg" alt="Laptop Dell 15 DC15250 màu bạc" width="240">
+                        <p>Phù hợp cho công việc văn phòng và sử dụng hằng ngày.</p>
+                        <ul>
+                            <li>CPU: Intel Core i5-1334U</li>
+                            <li>RAM: 16 GB</li>
+                            <li>SSD: 512 GB</li>
+                            <li>Màn hình: 15,6 inch Full HD</li>
+                        </ul>
+                        <p>Giá tham khảo: <strong>23.390.000 đ</strong></p>
+                        <div style="margin:10px">
+                            <button type="button" class="them-vao-gio" data-ma="71092479">
+                                Thêm vào giỏ hàng
+                            </button>
+                        </div>
+                        <a class="xem-chi-tiet" href="#chi-tiet-dell">Xem chi tiết sản phẩm</a>
+                    </article>
+                    <article data-loai="hoc-tap" data-gia="25990000">
+                        <h3>ASUS Zenbook 14 OLED UX3405</h3>
+                        <img src="images/asus-zenbook-14-oled-ux3405.jpg" alt="Laptop ASUS Zenbook 14 OLED UX3405" width="240">
+                        <p>Máy mỏng nhẹ với màn hình OLED, thuận tiện mang đi học và làm việc.</p>
+                        <ul>
+                            <li>CPU: Intel Core Ultra 7 155H</li>
+                            <li>RAM: 16 GB LPDDR5X</li>
+                            <li>SSD: 1 TB M.2 NVMe PCIe 4.0 SSD</li>
+                            <li>Màn hình: 14 inch OLED 3K</li>
+                            <li>Hệ điều hành: Windows 11 Home</li>
+                        </ul>
+                        <p>Giá tham khảo: <strong>25.990.000 đ</strong></p>
+                        <div style="margin:10px">
+                            <button type="button" class="them-vao-gio" data-ma="ZENBOOK-14-OLED-UX3405">Thêm vào giỏ hàng</button>
+                        </div>
+                        <a class="xem-chi-tiet" href="#chi-tiet-zenbook-14-oled-ux3405">Xem chi tiết sản phẩm</a>
+                    </article>
+                    <article data-loai="van-phong" data-gia="16990000">
+                        <h3>ASUS ExpertBook B1 B1502</h3>
+                        <img src="images/asus-expertbook-b1-b1502.jpg" alt="Laptop ASUS ExpertBook B1 B1502" width="240">
+                        <p>Dòng máy phục vụ công việc văn phòng với màn hình lớn và nhiều cổng kết nối.</p>
+                        <ul>
+                            <li>CPU: Intel Core i5-1335U</li>
+                            <li>RAM: 16 GB DDR4</li>
+                            <li>SSD: 512 GB M.2 NVMe PCIe 4.0 SSD</li>
+                            <li>Màn hình: 15,6 inch Full HD</li>
+                            <li>Hệ điều hành: Windows 11 Pro</li>
+                        </ul>
+                        <p>Giá tham khảo: <strong>16.990.000 đ</strong></p>
+                        <div style="margin:10px">
+                            <button type="button" class="them-vao-gio" data-ma="EXPERTBOOK-B1-B1502">Thêm vào giỏ hàng</button>
+                        </div>
+                        <a class="xem-chi-tiet" href="#chi-tiet-expertbook-b1-b1502">Xem chi tiết sản phẩm</a>
+                    </article>
+                    <article data-loai="hoc-tap" data-gia="15490000">
+                        <h3>ASUS Vivobook 15 X1504</h3>
+                        <img src="images/asus-vivobook-15-x1504.jpg" alt="Laptop ASUS Vivobook 15 X1504" width="240">
+                        <p>Laptop 15,6 inch cho học tập, soạn tài liệu và giải trí hằng ngày.</p>
+                        <ul>
+                            <li>CPU: Intel Core i5-1334U</li>
+                            <li>RAM: 8 GB DDR5</li>
+                            <li>SSD: 512 GB M.2 NVMe SSD</li>
+                            <li>Màn hình: 15,6 inch Full HD</li>
+                            <li>Hệ điều hành: Windows 11 Home</li>
+                        </ul>
+                        <p>Giá tham khảo: <strong>15.490.000 đ</strong></p>
+                        <div style="margin:10px">
+                            <button type="button" class="them-vao-gio" data-ma="VIVOBOOK-15-X1504">Thêm vào giỏ hàng</button>
+                        </div>
+                        <a class="xem-chi-tiet" href="#chi-tiet-vivobook-15-x1504">Xem chi tiết sản phẩm</a>
+                    </article>
+                    <article data-loai="van-phong" data-gia="32990000">
+                        <h3>ASUS Zenbook S 14 UX5406</h3>
+                        <img src="images/asus-zenbook-s-14-ux5406.jpg" alt="Laptop ASUS Zenbook S 14 UX5406" width="240">
+                        <p>Thiết kế gọn nhẹ, màn hình OLED phù hợp người thường xuyên di chuyển.</p>
+                        <ul>
+                            <li>CPU: Intel Core Ultra 7 256V</li>
+                            <li>RAM: 16 GB LPDDR5X</li>
+                            <li>SSD: 1 TB M.2 NVMe PCIe 4.0 SSD</li>
+                            <li>Màn hình: 14 inch OLED</li>
+                            <li>Hệ điều hành: Windows 11 Home</li>
+                        </ul>
+                        <p>Giá tham khảo: <strong>32.990.000 đ</strong></p>
+                        <div style="margin:10px">
+                            <button type="button" class="them-vao-gio" data-ma="ZENBOOK-S-14-UX5406">Thêm vào giỏ hàng</button>
+                        </div>
+                        <a class="xem-chi-tiet" href="#chi-tiet-zenbook-s-14-ux5406">Xem chi tiết sản phẩm</a>
+                    </article>
+                    <article data-loai="hoc-tap" data-gia="18490000">
+                        <h3>ASUS Vivobook 16 X1605</h3>
+                        <img src="images/asus-vivobook-16-x1605.png" alt="Laptop ASUS Vivobook 16 X1605" width="240">
+                        <p>Màn hình 16 inch rộng rãi để học trực tuyến và làm bài tập.</p>
+                        <ul>
+                            <li>CPU: Intel Core i5-1335U</li>
+                            <li>RAM: 16 GB DDR4</li>
+                            <li>SSD: 512 GB M.2 NVMe SSD</li>
+                            <li>Màn hình: 16 inch WUXGA</li>
+                            <li>Hệ điều hành: Windows 11 Home</li>
+                        </ul>
+                        <p>Giá tham khảo: <strong>18.490.000 đ</strong></p>
+                        <div style="margin:10px">
+                            <button type="button" class="them-vao-gio" data-ma="VIVOBOOK-16-X1605">Thêm vào giỏ hàng</button>
+                        </div>
+                        <a class="xem-chi-tiet" href="#chi-tiet-vivobook-16-x1605">Xem chi tiết sản phẩm</a>
+                    </article>
+                    <article data-loai="van-phong" data-gia="19990000">
+                        <h3>ASUS ExpertBook P1 P1503</h3>
+                        <img src="images/asus-expertbook-p1-p1503.jpg" alt="Laptop ASUS ExpertBook P1 P1503" width="240">
+                        <p>Máy dành cho công việc văn phòng, họp trực tuyến và xử lý nhiều tác vụ.</p>
+                        <ul>
+                            <li>CPU: Intel Core i5-13420H</li>
+                            <li>RAM: 16 GB DDR5 SO-DIMM</li>
+                            <li>SSD: 512 GB M.2 NVMe PCIe 4.0 SSD</li>
+                            <li>Màn hình: 15,6 inch Full HD</li>
+                            <li>Hệ điều hành: Windows 11 Pro</li>
+                        </ul>
+                        <p>Giá tham khảo: <strong>19.990.000 đ</strong></p>
+                        <div style="margin:10px">
+                            <button type="button" class="them-vao-gio" data-ma="EXPERTBOOK-P1-P1503">Thêm vào giỏ hàng</button>
+                        </div>
+                        <a class="xem-chi-tiet" href="#chi-tiet-expertbook-p1-p1503">Xem chi tiết sản phẩm</a>
+                    </article>
+                    <article data-loai="hoc-tap" data-gia="27990000">
+                        <h3>ASUS Vivobook S 16 OLED M5606</h3>
+                        <img src="images/asus-vivobook-s-16-m5606.jpg" alt="Laptop ASUS Vivobook S 16 OLED M5606" width="240">
+                        <p>Màn hình OLED 16 inch và hiệu năng cao cho học tập, thiết kế cơ bản.</p>
+                        <ul>
+                            <li>CPU: AMD Ryzen 9 8945HS</li>
+                            <li>RAM: 16 GB LPDDR5X</li>
+                            <li>SSD: 1 TB M.2 NVMe PCIe 4.0 SSD</li>
+                            <li>Màn hình: 16 inch OLED 3.2K</li>
+                            <li>Hệ điều hành: Windows 11 Home</li>
+                        </ul>
+                        <p>Giá tham khảo: <strong>27.990.000 đ</strong></p>
+                        <div style="margin:10px">
+                            <button type="button" class="them-vao-gio" data-ma="VIVOBOOK-S-16-M5606">Thêm vào giỏ hàng</button>
+                        </div>
+                        <a class="xem-chi-tiet" href="#chi-tiet-vivobook-s-16-m5606">Xem chi tiết sản phẩm</a>
+                    </article>
+                    <article data-loai="van-phong" data-gia="29990000">
+                        <h3>ASUS ExpertBook B5 B5404</h3>
+                        <img src="images/asus-expertbook-b5-b5404.jpg" alt="Laptop ASUS ExpertBook B5 B5404" width="240">
+                        <p>Laptop doanh nghiệp 14 inch với thiết kế dễ mang theo và nhiều kết nối.</p>
+                        <ul>
+                            <li>CPU: Intel Core Ultra 7 155H</li>
+                            <li>RAM: 16 GB DDR5</li>
+                            <li>SSD: 512 GB M.2 NVMe PCIe 4.0 SSD</li>
+                            <li>Màn hình: 14 inch WQXGA</li>
+                            <li>Hệ điều hành: Windows 11 Pro</li>
+                        </ul>
+                        <p>Giá tham khảo: <strong>29.990.000 đ</strong></p>
+                        <div style="margin:10px">
+                            <button type="button" class="them-vao-gio" data-ma="EXPERTBOOK-B5-B5404">Thêm vào giỏ hàng</button>
+                        </div>
+                        <a class="xem-chi-tiet" href="#chi-tiet-expertbook-b5-b5404">Xem chi tiết sản phẩm</a>
+                    </article>
+                    <article data-loai="hoc-tap" data-gia="27490000">
+                        <h3>ASUS Zenbook 14 Flip OLED UP3404</h3>
+                        <img src="images/asus-zenbook-flip-14-up3404.jpg" alt="Laptop ASUS Zenbook 14 Flip OLED UP3404" width="240">
+                        <p>Bản lề gập 360 độ và màn hình cảm ứng tiện ghi chú, thuyết trình.</p>
+                        <ul>
+                            <li>CPU: Intel Core i7-1360P</li>
+                            <li>RAM: 16 GB LPDDR5</li>
+                            <li>SSD: 1 TB M.2 NVMe PCIe 4.0 SSD</li>
+                            <li>Màn hình: 14 inch OLED cảm ứng</li>
+                            <li>Hệ điều hành: Windows 11 Pro</li>
+                        </ul>
+                        <p>Giá tham khảo: <strong>27.490.000 đ</strong></p>
+                        <div style="margin:10px">
+                            <button type="button" class="them-vao-gio" data-ma="ZENBOOK-FLIP-14-UP3404">Thêm vào giỏ hàng</button>
+                        </div>
+                        <a class="xem-chi-tiet" href="#chi-tiet-zenbook-flip-14-up3404">Xem chi tiết sản phẩm</a>
+                    </article>
+                    <article data-loai="van-phong" data-gia="26490000">
+                        <h3>ASUS Zenbook 15 OLED UM3504</h3>
+                        <img src="images/asus-zenbook-15-oled-um3504.jpg" alt="Laptop ASUS Zenbook 15 OLED UM3504" width="240">
+                        <p>Không gian hiển thị lớn, phù hợp làm tài liệu và làm việc di động.</p>
+                        <ul>
+                            <li>CPU: AMD Ryzen 7 7735U</li>
+                            <li>RAM: 16 GB LPDDR5</li>
+                            <li>SSD: 512 GB M.2 NVMe PCIe 4.0 SSD</li>
+                            <li>Màn hình: 15,6 inch OLED 2.8K</li>
+                            <li>Hệ điều hành: Windows 11 Home</li>
+                        </ul>
+                        <p>Giá tham khảo: <strong>26.490.000 đ</strong></p>
+                        <div style="margin:10px">
+                            <button type="button" class="them-vao-gio" data-ma="ZENBOOK-15-OLED-UM3504">Thêm vào giỏ hàng</button>
+                        </div>
+                        <a class="xem-chi-tiet" href="#chi-tiet-zenbook-15-oled-um3504">Xem chi tiết sản phẩm</a>
+                    </article>
+                    <article data-loai="hoc-tap" data-gia="31990000">
+                        <h3>ASUS Vivobook Pro 15 OLED N6506</h3>
+                        <img src="images/asus-vivobook-pro-15-n6506.jpg" alt="Laptop ASUS Vivobook Pro 15 OLED N6506" width="240">
+                        <p>Màn hình OLED và cấu hình mạnh cho học thiết kế, dựng nội dung.</p>
+                        <ul>
+                            <li>CPU: Intel Core Ultra 7 155H</li>
+                            <li>RAM: 16 GB DDR5</li>
+                            <li>SSD: 1 TB M.2 NVMe PCIe 4.0 SSD</li>
+                            <li>Màn hình: 15,6 inch OLED 3K</li>
+                            <li>Hệ điều hành: Windows 11 Home</li>
+                        </ul>
+                        <p>Giá tham khảo: <strong>31.990.000 đ</strong></p>
+                        <div style="margin:10px">
+                            <button type="button" class="them-vao-gio" data-ma="VIVOBOOK-PRO-15-N6506">Thêm vào giỏ hàng</button>
+                        </div>
+                        <a class="xem-chi-tiet" href="#chi-tiet-vivobook-pro-15-n6506">Xem chi tiết sản phẩm</a>
+                    </article>
+                    <article data-loai="van-phong" data-gia="39990000">
+                        <h3>ASUS Zenbook DUO UX8406</h3>
+                        <img src="images/asus-zenbook-duo-ux8406.png" alt="Laptop ASUS Zenbook DUO UX8406" width="240">
+                        <p>Thiết kế hai màn hình hỗ trợ làm nhiều việc và trình bày nội dung.</p>
+                        <ul>
+                            <li>CPU: Intel Core Ultra 7 155H</li>
+                            <li>RAM: 16 GB LPDDR5X</li>
+                            <li>SSD: 1 TB M.2 NVMe PCIe 4.0 SSD</li>
+                            <li>Màn hình: Hai màn hình 14 inch OLED</li>
+                            <li>Hệ điều hành: Windows 11 Home</li>
+                        </ul>
+                        <p>Giá tham khảo: <strong>39.990.000 đ</strong></p>
+                        <div style="margin:10px">
+                            <button type="button" class="them-vao-gio" data-ma="ZENBOOK-DUO-UX8406">Thêm vào giỏ hàng</button>
+                        </div>
+                        <a class="xem-chi-tiet" href="#chi-tiet-zenbook-duo-ux8406">Xem chi tiết sản phẩm</a>
+                    </article>
+                </div>
+                <div id="phan-trang">
+                    <button type="button" id="trang-truoc">Trang trước</button>
+                    <span id="so-trang">Trang 1</span>
+                    <button type="button" id="trang-sau">Trang sau</button>
+                </div>
             </div>
         </section>
         <section id="gioi-thieu">
@@ -690,6 +941,930 @@
                     <tr>
                         <th>Kích thước</th>
                         <td>358,5 × 235,56 × 16,96–18,99 mm</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" class="quay-lai-danh-sach">Quay về danh sách sản phẩm</button>
+        </section>
+        <section id="chi-tiet-zenbook-14-oled-ux3405" class="chi-tiet-san-pham" hidden>
+            <!-- Ảnh và thông tin dòng máy: https://www.asus.com/laptops/for-home/zenbook/asus-zenbook-14-oled-ux3405/ -->
+            <h2>ASUS Zenbook 14 OLED UX3405</h2>
+            <img src="images/asus-zenbook-14-oled-ux3405.jpg" alt="Laptop ASUS Zenbook 14 OLED UX3405" width="240">
+            <p>Giá tham khảo: <strong>25.990.000 đ</strong></p>
+            <button type="button" class="them-vao-gio" data-ma="ZENBOOK-14-OLED-UX3405">Thêm vào giỏ hàng</button>
+            <h3>Mô tả sản phẩm</h3>
+            <p>Máy mỏng nhẹ với màn hình OLED, thuận tiện mang đi học và làm việc. Thông số có thể thay đổi theo phiên bản.</p>
+            <h3>Thông số kỹ thuật chi tiết</h3>
+            <div class="bang-cuon">
+                <table>
+                    <tr>
+                        <th>CPU</th>
+                        <td>Intel Core Ultra 7 155H, 16 nhân, 22 luồng, tối đa 4,8 GHz</td>
+                    </tr>
+                    <tr>
+                        <th>Chip AI</th>
+                        <td>Intel AI Boost NPU, tối đa 11 TOPS</td>
+                    </tr>
+                    <tr>
+                        <th>Card đồ họa</th>
+                        <td>Intel Arc Graphics tích hợp</td>
+                    </tr>
+                    <tr>
+                        <th>RAM</th>
+                        <td>16 GB LPDDR5X</td>
+                    </tr>
+                    <tr>
+                        <th>Ổ cứng</th>
+                        <td>1 TB M.2 NVMe PCIe 4.0 SSD</td>
+                    </tr>
+                    <tr>
+                        <th>Màn hình</th>
+                        <td>14 inch OLED 3K (2880 × 1800), tỉ lệ 16:10, 120 Hz</td>
+                    </tr>
+                    <tr>
+                        <th>Độ sáng và màu màn hình</th>
+                        <td>100% DCI-P3, độ sáng 400 nits, tối đa 500 nits HDR</td>
+                    </tr>
+                    <tr>
+                        <th>Hệ điều hành</th>
+                        <td>Windows 11 Home</td>
+                    </tr>
+                    <tr>
+                        <th>Pin</th>
+                        <td>75 Wh, pin Li-ion 4 cell</td>
+                    </tr>
+                    <tr>
+                        <th>Cổng kết nối</th>
+                        <td>2 Thunderbolt 4 USB-C, 1 USB-A 3.2 Gen 1, HDMI 2.1, jack âm thanh 3,5 mm</td>
+                    </tr>
+                    <tr>
+                        <th>Kết nối không dây</th>
+                        <td>Wi-Fi 6E, Bluetooth 5.2</td>
+                    </tr>
+                    <tr>
+                        <th>Webcam</th>
+                        <td>Webcam Full HD hồng ngoại, có nắp che riêng tư</td>
+                    </tr>
+                    <tr>
+                        <th>Bàn phím</th>
+                        <td>Bàn phím Chiclet có đèn nền, hành trình 1,4 mm</td>
+                    </tr>
+                    <tr>
+                        <th>Khối lượng</th>
+                        <td>Khoảng 1,28 kg</td>
+                    </tr>
+                    <tr>
+                        <th>Kích thước</th>
+                        <td>31,24 × 22,01 × 1,49 cm</td>
+                    </tr>
+                    <tr>
+                        <th>Màu sắc</th>
+                        <td>Xanh Ponder Blue hoặc bạc Foggy Silver</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" class="quay-lai-danh-sach">Quay về danh sách sản phẩm</button>
+        </section>
+        <section id="chi-tiet-expertbook-b1-b1502" class="chi-tiet-san-pham" hidden>
+            <!-- Ảnh và thông tin dòng máy: https://www.asus.com/us/laptops/for-work/expertbook/expertbook-b1-b1502-13th-gen-intel/ -->
+            <h2>ASUS ExpertBook B1 B1502</h2>
+            <img src="images/asus-expertbook-b1-b1502.jpg" alt="Laptop ASUS ExpertBook B1 B1502" width="240">
+            <p>Giá tham khảo: <strong>16.990.000 đ</strong></p>
+            <button type="button" class="them-vao-gio" data-ma="EXPERTBOOK-B1-B1502">Thêm vào giỏ hàng</button>
+            <h3>Mô tả sản phẩm</h3>
+            <p>Dòng máy phục vụ công việc văn phòng với màn hình lớn và nhiều cổng kết nối. Thông số có thể thay đổi theo phiên bản.</p>
+            <h3>Thông số kỹ thuật chi tiết</h3>
+            <div class="bang-cuon">
+                <table>
+                    <tr>
+                        <th>CPU</th>
+                        <td>Intel Core i5-1335U thế hệ 13, 10 nhân, 12 luồng, tối đa 4,6 GHz</td>
+                    </tr>
+                    <tr>
+                        <th>Card đồ họa</th>
+                        <td>Intel UHD Graphics tích hợp</td>
+                    </tr>
+                    <tr>
+                        <th>RAM</th>
+                        <td>16 GB DDR4</td>
+                    </tr>
+                    <tr>
+                        <th>Ổ cứng</th>
+                        <td>512 GB M.2 NVMe PCIe 4.0 SSD</td>
+                    </tr>
+                    <tr>
+                        <th>Màn hình</th>
+                        <td>15,6 inch Full HD (1920 × 1080), chống chói</td>
+                    </tr>
+                    <tr>
+                        <th>Độ sáng và màu màn hình</th>
+                        <td>Độ phủ màu 45% NTSC</td>
+                    </tr>
+                    <tr>
+                        <th>Hệ điều hành</th>
+                        <td>Windows 11 Pro</td>
+                    </tr>
+                    <tr>
+                        <th>Pin</th>
+                        <td>42 Wh, pin Li-ion 3 cell</td>
+                    </tr>
+                    <tr>
+                        <th>Cổng kết nối</th>
+                        <td>USB-C 3.2, USB-A, HDMI, RJ45 và jack âm thanh 3,5 mm</td>
+                    </tr>
+                    <tr>
+                        <th>Kết nối không dây</th>
+                        <td>Wi-Fi 6E, Bluetooth 5.4</td>
+                    </tr>
+                    <tr>
+                        <th>Webcam</th>
+                        <td>Webcam có nắp che riêng tư</td>
+                    </tr>
+                    <tr>
+                        <th>Bàn phím</th>
+                        <td>Bàn phím Chiclet có đèn nền, chống tràn</td>
+                    </tr>
+                    <tr>
+                        <th>Khối lượng</th>
+                        <td>Từ khoảng 1,69 kg</td>
+                    </tr>
+                    <tr>
+                        <th>Kích thước</th>
+                        <td>36,16 × 23,30 × 1,99 cm</td>
+                    </tr>
+                    <tr>
+                        <th>Màu sắc</th>
+                        <td>Đen Star Black</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" class="quay-lai-danh-sach">Quay về danh sách sản phẩm</button>
+        </section>
+        <section id="chi-tiet-vivobook-15-x1504" class="chi-tiet-san-pham" hidden>
+            <!-- Ảnh và thông tin dòng máy: https://www.asus.com/uk/laptops/for-home/vivobook/asus-vivobook-15-x1504/ -->
+            <h2>ASUS Vivobook 15 X1504</h2>
+            <img src="images/asus-vivobook-15-x1504.jpg" alt="Laptop ASUS Vivobook 15 X1504" width="240">
+            <p>Giá tham khảo: <strong>15.490.000 đ</strong></p>
+            <button type="button" class="them-vao-gio" data-ma="VIVOBOOK-15-X1504">Thêm vào giỏ hàng</button>
+            <h3>Mô tả sản phẩm</h3>
+            <p>Laptop 15,6 inch cho học tập, soạn tài liệu và giải trí hằng ngày. Thông số có thể thay đổi theo phiên bản.</p>
+            <h3>Thông số kỹ thuật chi tiết</h3>
+            <div class="bang-cuon">
+                <table>
+                    <tr>
+                        <th>CPU</th>
+                        <td>Intel Core i5-1334U thế hệ 13, 10 nhân, 12 luồng, tối đa 4,6 GHz</td>
+                    </tr>
+                    <tr>
+                        <th>Card đồ họa</th>
+                        <td>Intel UHD Graphics tích hợp</td>
+                    </tr>
+                    <tr>
+                        <th>RAM</th>
+                        <td>8 GB DDR5</td>
+                    </tr>
+                    <tr>
+                        <th>Ổ cứng</th>
+                        <td>512 GB M.2 NVMe SSD</td>
+                    </tr>
+                    <tr>
+                        <th>Màn hình</th>
+                        <td>15,6 inch Full HD (1920 × 1080), 60 Hz, chống chói</td>
+                    </tr>
+                    <tr>
+                        <th>Độ sáng và màu màn hình</th>
+                        <td>Độ sáng 250 nits, độ phủ màu 45% NTSC</td>
+                    </tr>
+                    <tr>
+                        <th>Hệ điều hành</th>
+                        <td>Windows 11 Home</td>
+                    </tr>
+                    <tr>
+                        <th>Pin</th>
+                        <td>42 Wh, pin Li-ion 3 cell</td>
+                    </tr>
+                    <tr>
+                        <th>Cổng kết nối</th>
+                        <td>USB-C 3.2 Gen 1, 2 USB-A 3.2 Gen 1, USB-A 2.0, HDMI 1.4, jack âm thanh 3,5 mm</td>
+                    </tr>
+                    <tr>
+                        <th>Kết nối không dây</th>
+                        <td>Wi-Fi 6E, Bluetooth 5.3</td>
+                    </tr>
+                    <tr>
+                        <th>Webcam</th>
+                        <td>Webcam HD 720p, có nắp che riêng tư</td>
+                    </tr>
+                    <tr>
+                        <th>Bàn phím</th>
+                        <td>Bàn phím Chiclet, bàn phím số</td>
+                    </tr>
+                    <tr>
+                        <th>Khối lượng</th>
+                        <td>Khoảng 1,70 kg</td>
+                    </tr>
+                    <tr>
+                        <th>Kích thước</th>
+                        <td>35,97 × 23,25 × 1,79 cm</td>
+                    </tr>
+                    <tr>
+                        <th>Màu sắc</th>
+                        <td>Có nhiều tùy chọn màu theo phiên bản</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" class="quay-lai-danh-sach">Quay về danh sách sản phẩm</button>
+        </section>
+        <section id="chi-tiet-zenbook-s-14-ux5406" class="chi-tiet-san-pham" hidden>
+            <!-- Ảnh và thông tin dòng máy: https://www.asus.com/laptops/for-home/zenbook/asus-zenbook-s-14-ux5406/ -->
+            <h2>ASUS Zenbook S 14 UX5406</h2>
+            <img src="images/asus-zenbook-s-14-ux5406.jpg" alt="Laptop ASUS Zenbook S 14 UX5406" width="240">
+            <p>Giá tham khảo: <strong>32.990.000 đ</strong></p>
+            <button type="button" class="them-vao-gio" data-ma="ZENBOOK-S-14-UX5406">Thêm vào giỏ hàng</button>
+            <h3>Mô tả sản phẩm</h3>
+            <p>Thiết kế gọn nhẹ, màn hình OLED phù hợp người thường xuyên di chuyển. Thông số có thể thay đổi theo phiên bản.</p>
+            <h3>Thông số kỹ thuật chi tiết</h3>
+            <div class="bang-cuon">
+                <table>
+                    <tr>
+                        <th>CPU</th>
+                        <td>Intel Core Ultra 7 256V, 8 nhân, 8 luồng</td>
+                    </tr>
+                    <tr>
+                        <th>Chip AI</th>
+                        <td>Intel AI Boost NPU</td>
+                    </tr>
+                    <tr>
+                        <th>Card đồ họa</th>
+                        <td>Intel Arc Graphics tích hợp</td>
+                    </tr>
+                    <tr>
+                        <th>RAM</th>
+                        <td>16 GB LPDDR5X</td>
+                    </tr>
+                    <tr>
+                        <th>Ổ cứng</th>
+                        <td>1 TB M.2 NVMe PCIe 4.0 SSD</td>
+                    </tr>
+                    <tr>
+                        <th>Màn hình</th>
+                        <td>14 inch OLED, tỉ lệ 16:10; độ phân giải tùy phiên bản</td>
+                    </tr>
+                    <tr>
+                        <th>Độ sáng và màu màn hình</th>
+                        <td>100% DCI-P3, độ sáng 400 nits</td>
+                    </tr>
+                    <tr>
+                        <th>Hệ điều hành</th>
+                        <td>Windows 11 Home</td>
+                    </tr>
+                    <tr>
+                        <th>Pin</th>
+                        <td>Pin Li-ion 4 cell, dung lượng tùy phiên bản</td>
+                    </tr>
+                    <tr>
+                        <th>Cổng kết nối</th>
+                        <td>2 Thunderbolt 4 USB-C, USB-A 3.2 Gen 2, HDMI, jack âm thanh 3,5 mm</td>
+                    </tr>
+                    <tr>
+                        <th>Kết nối không dây</th>
+                        <td>Wi-Fi 7, Bluetooth 5.4</td>
+                    </tr>
+                    <tr>
+                        <th>Webcam</th>
+                        <td>Webcam Full HD hồng ngoại hỗ trợ Windows Hello</td>
+                    </tr>
+                    <tr>
+                        <th>Bàn phím</th>
+                        <td>Bàn phím Chiclet có đèn nền, phím Copilot</td>
+                    </tr>
+                    <tr>
+                        <th>Khối lượng</th>
+                        <td>Khoảng 1,20 kg</td>
+                    </tr>
+                    <tr>
+                        <th>Kích thước</th>
+                        <td>31,03 × 21,47 × 1,19–1,29 cm</td>
+                    </tr>
+                    <tr>
+                        <th>Màu sắc</th>
+                        <td>Xám Zumaia Gray hoặc trắng Scandinavian White</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" class="quay-lai-danh-sach">Quay về danh sách sản phẩm</button>
+        </section>
+        <section id="chi-tiet-vivobook-16-x1605" class="chi-tiet-san-pham" hidden>
+            <!-- Ảnh và thông tin dòng máy: https://www.asus.com/uk/laptops/for-home/vivobook/vivobook-16-oled-x1605/ -->
+            <h2>ASUS Vivobook 16 X1605</h2>
+            <img src="images/asus-vivobook-16-x1605.png" alt="Laptop ASUS Vivobook 16 X1605" width="240">
+            <p>Giá tham khảo: <strong>18.490.000 đ</strong></p>
+            <button type="button" class="them-vao-gio" data-ma="VIVOBOOK-16-X1605">Thêm vào giỏ hàng</button>
+            <h3>Mô tả sản phẩm</h3>
+            <p>Màn hình 16 inch rộng rãi để học trực tuyến và làm bài tập. Thông số có thể thay đổi theo phiên bản.</p>
+            <h3>Thông số kỹ thuật chi tiết</h3>
+            <div class="bang-cuon">
+                <table>
+                    <tr>
+                        <th>CPU</th>
+                        <td>Intel Core i5-1335U thế hệ 13, 10 nhân, 12 luồng, tối đa 4,6 GHz</td>
+                    </tr>
+                    <tr>
+                        <th>Card đồ họa</th>
+                        <td>Đồ họa Intel tích hợp</td>
+                    </tr>
+                    <tr>
+                        <th>RAM</th>
+                        <td>16 GB DDR4</td>
+                    </tr>
+                    <tr>
+                        <th>Ổ cứng</th>
+                        <td>512 GB M.2 NVMe SSD</td>
+                    </tr>
+                    <tr>
+                        <th>Màn hình</th>
+                        <td>16 inch WUXGA (1920 × 1200), tỉ lệ 16:10, 60 Hz</td>
+                    </tr>
+                    <tr>
+                        <th>Độ sáng và màu màn hình</th>
+                        <td>Độ sáng 300 nits, độ phủ màu 45% NTSC, chống chói</td>
+                    </tr>
+                    <tr>
+                        <th>Hệ điều hành</th>
+                        <td>Windows 11 Home</td>
+                    </tr>
+                    <tr>
+                        <th>Pin</th>
+                        <td>42 Wh, pin Li-ion 3 cell</td>
+                    </tr>
+                    <tr>
+                        <th>Cổng kết nối</th>
+                        <td>2 USB-A 3.2 Gen 1, USB-C 3.2 Gen 1, HDMI và jack âm thanh 3,5 mm</td>
+                    </tr>
+                    <tr>
+                        <th>Kết nối không dây</th>
+                        <td>Wi-Fi 6, Bluetooth 5.0</td>
+                    </tr>
+                    <tr>
+                        <th>Webcam</th>
+                        <td>Webcam HD 720p, có nắp che riêng tư</td>
+                    </tr>
+                    <tr>
+                        <th>Bàn phím</th>
+                        <td>Bàn phím Chiclet có bàn phím số</td>
+                    </tr>
+                    <tr>
+                        <th>Khối lượng</th>
+                        <td>Khoảng 1,88 kg</td>
+                    </tr>
+                    <tr>
+                        <th>Kích thước</th>
+                        <td>35,87 × 24,95 × 1,99 cm</td>
+                    </tr>
+                    <tr>
+                        <th>Màu sắc</th>
+                        <td>Màu sắc tùy phiên bản</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" class="quay-lai-danh-sach">Quay về danh sách sản phẩm</button>
+        </section>
+        <section id="chi-tiet-expertbook-p1-p1503" class="chi-tiet-san-pham" hidden>
+            <!-- Ảnh và thông tin dòng máy: https://www.asus.com/us/laptops/for-work/expertbook/expertbook-p1-p1503/ -->
+            <h2>ASUS ExpertBook P1 P1503</h2>
+            <img src="images/asus-expertbook-p1-p1503.jpg" alt="Laptop ASUS ExpertBook P1 P1503" width="240">
+            <p>Giá tham khảo: <strong>19.990.000 đ</strong></p>
+            <button type="button" class="them-vao-gio" data-ma="EXPERTBOOK-P1-P1503">Thêm vào giỏ hàng</button>
+            <h3>Mô tả sản phẩm</h3>
+            <p>Máy dành cho công việc văn phòng, họp trực tuyến và xử lý nhiều tác vụ. Thông số có thể thay đổi theo phiên bản.</p>
+            <h3>Thông số kỹ thuật chi tiết</h3>
+            <div class="bang-cuon">
+                <table>
+                    <tr>
+                        <th>CPU</th>
+                        <td>Intel Core i5-13420H thế hệ 13, 8 nhân, 12 luồng</td>
+                    </tr>
+                    <tr>
+                        <th>Card đồ họa</th>
+                        <td>Intel UHD Graphics tích hợp</td>
+                    </tr>
+                    <tr>
+                        <th>RAM</th>
+                        <td>16 GB DDR5 SO-DIMM</td>
+                    </tr>
+                    <tr>
+                        <th>Ổ cứng</th>
+                        <td>512 GB M.2 NVMe PCIe 4.0 SSD</td>
+                    </tr>
+                    <tr>
+                        <th>Màn hình</th>
+                        <td>15,6 inch Full HD (1920 × 1080), chống chói</td>
+                    </tr>
+                    <tr>
+                        <th>Độ sáng và màu màn hình</th>
+                        <td>Độ sáng 300 nits, độ phủ màu 45% NTSC</td>
+                    </tr>
+                    <tr>
+                        <th>Hệ điều hành</th>
+                        <td>Windows 11 Pro</td>
+                    </tr>
+                    <tr>
+                        <th>Pin</th>
+                        <td>Pin lithium-polymer; hỗ trợ bộ sạc USB-C 65 W</td>
+                    </tr>
+                    <tr>
+                        <th>Cổng kết nối</th>
+                        <td>2 USB-C 3.2 Gen 2, 2 USB-A 3.2 Gen 1, RJ45, HDMI, jack âm thanh 3,5 mm</td>
+                    </tr>
+                    <tr>
+                        <th>Kết nối không dây</th>
+                        <td>Wi-Fi 6, Bluetooth 5.4</td>
+                    </tr>
+                    <tr>
+                        <th>Webcam</th>
+                        <td>Webcam có nắp che riêng tư</td>
+                    </tr>
+                    <tr>
+                        <th>Bàn phím</th>
+                        <td>Bàn phím Chiclet có bàn phím số, chống tràn</td>
+                    </tr>
+                    <tr>
+                        <th>Khối lượng</th>
+                        <td>Từ khoảng 1,61 kg</td>
+                    </tr>
+                    <tr>
+                        <th>Kích thước</th>
+                        <td>35,95 × 23,22 × 1,99 cm</td>
+                    </tr>
+                    <tr>
+                        <th>Màu sắc</th>
+                        <td>Xám Misty Grey</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" class="quay-lai-danh-sach">Quay về danh sách sản phẩm</button>
+        </section>
+        <section id="chi-tiet-vivobook-s-16-m5606" class="chi-tiet-san-pham" hidden>
+            <!-- Ảnh và thông tin dòng máy: https://www.asus.com/laptops/for-home/vivobook/asus-vivobook-s-16-oled-m5606/ -->
+            <h2>ASUS Vivobook S 16 OLED M5606</h2>
+            <img src="images/asus-vivobook-s-16-m5606.jpg" alt="Laptop ASUS Vivobook S 16 OLED M5606" width="240">
+            <p>Giá tham khảo: <strong>27.990.000 đ</strong></p>
+            <button type="button" class="them-vao-gio" data-ma="VIVOBOOK-S-16-M5606">Thêm vào giỏ hàng</button>
+            <h3>Mô tả sản phẩm</h3>
+            <p>Màn hình OLED 16 inch và hiệu năng cao cho học tập, thiết kế cơ bản. Thông số có thể thay đổi theo phiên bản.</p>
+            <h3>Thông số kỹ thuật chi tiết</h3>
+            <div class="bang-cuon">
+                <table>
+                    <tr>
+                        <th>CPU</th>
+                        <td>AMD Ryzen 9 8945HS, 8 nhân, 16 luồng, tối đa 5,2 GHz</td>
+                    </tr>
+                    <tr>
+                        <th>Chip AI</th>
+                        <td>AMD XDNA NPU, tối đa 16 TOPS</td>
+                    </tr>
+                    <tr>
+                        <th>Card đồ họa</th>
+                        <td>AMD Radeon Graphics tích hợp</td>
+                    </tr>
+                    <tr>
+                        <th>RAM</th>
+                        <td>16 GB LPDDR5X</td>
+                    </tr>
+                    <tr>
+                        <th>Ổ cứng</th>
+                        <td>1 TB M.2 NVMe PCIe 4.0 SSD</td>
+                    </tr>
+                    <tr>
+                        <th>Màn hình</th>
+                        <td>16 inch OLED 3.2K (3200 × 2000), tỉ lệ 16:10, 120 Hz</td>
+                    </tr>
+                    <tr>
+                        <th>Độ sáng và màu màn hình</th>
+                        <td>100% DCI-P3, độ sáng 400 nits, tối đa 600 nits HDR</td>
+                    </tr>
+                    <tr>
+                        <th>Hệ điều hành</th>
+                        <td>Windows 11 Home</td>
+                    </tr>
+                    <tr>
+                        <th>Pin</th>
+                        <td>75 Wh, pin Li-ion 4 cell</td>
+                    </tr>
+                    <tr>
+                        <th>Cổng kết nối</th>
+                        <td>2 USB-C 3.2 Gen 1, 2 USB-A 3.2 Gen 1, HDMI, jack âm thanh 3,5 mm</td>
+                    </tr>
+                    <tr>
+                        <th>Kết nối không dây</th>
+                        <td>Wi-Fi 6E, Bluetooth 5.2</td>
+                    </tr>
+                    <tr>
+                        <th>Webcam</th>
+                        <td>Webcam Full HD hồng ngoại, có nắp che riêng tư</td>
+                    </tr>
+                    <tr>
+                        <th>Bàn phím</th>
+                        <td>Bàn phím Chiclet RGB một vùng, có bàn phím số</td>
+                    </tr>
+                    <tr>
+                        <th>Khối lượng</th>
+                        <td>Khoảng 1,50 kg</td>
+                    </tr>
+                    <tr>
+                        <th>Kích thước</th>
+                        <td>35,36 × 24,69 × 1,39–1,59 cm</td>
+                    </tr>
+                    <tr>
+                        <th>Màu sắc</th>
+                        <td>Đen Neutral Black hoặc bạc Cool Silver</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" class="quay-lai-danh-sach">Quay về danh sách sản phẩm</button>
+        </section>
+        <section id="chi-tiet-expertbook-b5-b5404" class="chi-tiet-san-pham" hidden>
+            <!-- Ảnh và thông tin dòng máy: https://www.asus.com/us/laptops/for-work/expertbook/expertbook-b5-b5404/ -->
+            <h2>ASUS ExpertBook B5 B5404</h2>
+            <img src="images/asus-expertbook-b5-b5404.jpg" alt="Laptop ASUS ExpertBook B5 B5404" width="240">
+            <p>Giá tham khảo: <strong>29.990.000 đ</strong></p>
+            <button type="button" class="them-vao-gio" data-ma="EXPERTBOOK-B5-B5404">Thêm vào giỏ hàng</button>
+            <h3>Mô tả sản phẩm</h3>
+            <p>Laptop doanh nghiệp 14 inch với thiết kế dễ mang theo và nhiều kết nối. Thông số có thể thay đổi theo phiên bản.</p>
+            <h3>Thông số kỹ thuật chi tiết</h3>
+            <div class="bang-cuon">
+                <table>
+                    <tr>
+                        <th>CPU</th>
+                        <td>Intel Core Ultra 7 155H, 16 nhân, 22 luồng, tối đa 4,8 GHz</td>
+                    </tr>
+                    <tr>
+                        <th>Chip AI</th>
+                        <td>Intel AI Boost NPU</td>
+                    </tr>
+                    <tr>
+                        <th>Card đồ họa</th>
+                        <td>Intel Arc Graphics tích hợp</td>
+                    </tr>
+                    <tr>
+                        <th>RAM</th>
+                        <td>16 GB DDR5</td>
+                    </tr>
+                    <tr>
+                        <th>Ổ cứng</th>
+                        <td>512 GB M.2 NVMe PCIe 4.0 SSD</td>
+                    </tr>
+                    <tr>
+                        <th>Màn hình</th>
+                        <td>14 inch WQXGA (2560 × 1600), tỉ lệ 16:10, chống chói</td>
+                    </tr>
+                    <tr>
+                        <th>Độ sáng và màu màn hình</th>
+                        <td>Độ sáng 500 nits, độ phủ màu 100% DCI-P3</td>
+                    </tr>
+                    <tr>
+                        <th>Hệ điều hành</th>
+                        <td>Windows 11 Pro</td>
+                    </tr>
+                    <tr>
+                        <th>Pin</th>
+                        <td>63 Wh, pin Li-ion 3 cell</td>
+                    </tr>
+                    <tr>
+                        <th>Cổng kết nối</th>
+                        <td>2 Thunderbolt 4 USB-C, 2 USB-A 3.2 Gen 2, RJ45, HDMI, jack âm thanh 3,5 mm</td>
+                    </tr>
+                    <tr>
+                        <th>Kết nối không dây</th>
+                        <td>Wi-Fi 6E, Bluetooth 5.4</td>
+                    </tr>
+                    <tr>
+                        <th>Webcam</th>
+                        <td>Webcam Full HD hồng ngoại, có nắp che riêng tư</td>
+                    </tr>
+                    <tr>
+                        <th>Bàn phím</th>
+                        <td>Bàn phím Chiclet có đèn nền, chống tràn</td>
+                    </tr>
+                    <tr>
+                        <th>Khối lượng</th>
+                        <td>Từ khoảng 1,29 kg</td>
+                    </tr>
+                    <tr>
+                        <th>Kích thước</th>
+                        <td>31,37 × 22,68 × 1,89–1,90 cm</td>
+                    </tr>
+                    <tr>
+                        <th>Màu sắc</th>
+                        <td>Đen Star Black</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" class="quay-lai-danh-sach">Quay về danh sách sản phẩm</button>
+        </section>
+        <section id="chi-tiet-zenbook-flip-14-up3404" class="chi-tiet-san-pham" hidden>
+            <!-- Ảnh và thông tin dòng máy: https://www.asus.com/laptops/for-home/zenbook/zenbook-14-flip-oled-up3404/ -->
+            <h2>ASUS Zenbook 14 Flip OLED UP3404</h2>
+            <img src="images/asus-zenbook-flip-14-up3404.jpg" alt="Laptop ASUS Zenbook 14 Flip OLED UP3404" width="240">
+            <p>Giá tham khảo: <strong>27.490.000 đ</strong></p>
+            <button type="button" class="them-vao-gio" data-ma="ZENBOOK-FLIP-14-UP3404">Thêm vào giỏ hàng</button>
+            <h3>Mô tả sản phẩm</h3>
+            <p>Bản lề gập 360 độ và màn hình cảm ứng tiện ghi chú, thuyết trình. Thông số có thể thay đổi theo phiên bản.</p>
+            <h3>Thông số kỹ thuật chi tiết</h3>
+            <div class="bang-cuon">
+                <table>
+                    <tr>
+                        <th>CPU</th>
+                        <td>Intel Core i7-1360P thế hệ 13, 12 nhân, 16 luồng, tối đa 5,0 GHz</td>
+                    </tr>
+                    <tr>
+                        <th>Card đồ họa</th>
+                        <td>Intel Iris Xe Graphics tích hợp</td>
+                    </tr>
+                    <tr>
+                        <th>RAM</th>
+                        <td>16 GB LPDDR5</td>
+                    </tr>
+                    <tr>
+                        <th>Ổ cứng</th>
+                        <td>1 TB M.2 NVMe PCIe 4.0 SSD</td>
+                    </tr>
+                    <tr>
+                        <th>Màn hình</th>
+                        <td>14 inch OLED cảm ứng (2880 × 1800), tỉ lệ 16:10, 90 Hz; bản lề gập 360 độ</td>
+                    </tr>
+                    <tr>
+                        <th>Độ sáng và màu màn hình</th>
+                        <td>100% DCI-P3, độ sáng 400 nits, tối đa 550 nits HDR</td>
+                    </tr>
+                    <tr>
+                        <th>Hệ điều hành</th>
+                        <td>Windows 11 Pro</td>
+                    </tr>
+                    <tr>
+                        <th>Pin</th>
+                        <td>75 Wh, pin Li-ion 4 cell</td>
+                    </tr>
+                    <tr>
+                        <th>Cổng kết nối</th>
+                        <td>2 Thunderbolt 4 USB-C, USB-A 3.2 Gen 2, HDMI, jack âm thanh 3,5 mm</td>
+                    </tr>
+                    <tr>
+                        <th>Kết nối không dây</th>
+                        <td>Wi-Fi 6E, Bluetooth 5.2</td>
+                    </tr>
+                    <tr>
+                        <th>Webcam</th>
+                        <td>Webcam Full HD hồng ngoại hỗ trợ Windows Hello</td>
+                    </tr>
+                    <tr>
+                        <th>Bàn phím</th>
+                        <td>Bàn phím Chiclet có đèn nền, hỗ trợ NumberPad</td>
+                    </tr>
+                    <tr>
+                        <th>Khối lượng</th>
+                        <td>Khoảng 1,50 kg</td>
+                    </tr>
+                    <tr>
+                        <th>Kích thước</th>
+                        <td>31,15 × 22,34 × 1,59 cm</td>
+                    </tr>
+                    <tr>
+                        <th>Màu sắc</th>
+                        <td>Xanh Ponder Blue hoặc bạc Foggy Silver</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" class="quay-lai-danh-sach">Quay về danh sách sản phẩm</button>
+        </section>
+        <section id="chi-tiet-zenbook-15-oled-um3504" class="chi-tiet-san-pham" hidden>
+            <!-- Ảnh và thông tin dòng máy: https://www.asus.com/laptops/for-home/zenbook/asus-zenbook-15-oled-um3504/ -->
+            <h2>ASUS Zenbook 15 OLED UM3504</h2>
+            <img src="images/asus-zenbook-15-oled-um3504.jpg" alt="Laptop ASUS Zenbook 15 OLED UM3504" width="240">
+            <p>Giá tham khảo: <strong>26.490.000 đ</strong></p>
+            <button type="button" class="them-vao-gio" data-ma="ZENBOOK-15-OLED-UM3504">Thêm vào giỏ hàng</button>
+            <h3>Mô tả sản phẩm</h3>
+            <p>Không gian hiển thị lớn, phù hợp làm tài liệu và làm việc di động. Thông số có thể thay đổi theo phiên bản.</p>
+            <h3>Thông số kỹ thuật chi tiết</h3>
+            <div class="bang-cuon">
+                <table>
+                    <tr>
+                        <th>CPU</th>
+                        <td>AMD Ryzen 7 7735U, 8 nhân, 16 luồng, tối đa 4,75 GHz</td>
+                    </tr>
+                    <tr>
+                        <th>Card đồ họa</th>
+                        <td>AMD Radeon Graphics tích hợp</td>
+                    </tr>
+                    <tr>
+                        <th>RAM</th>
+                        <td>16 GB LPDDR5</td>
+                    </tr>
+                    <tr>
+                        <th>Ổ cứng</th>
+                        <td>512 GB M.2 NVMe PCIe 4.0 SSD</td>
+                    </tr>
+                    <tr>
+                        <th>Màn hình</th>
+                        <td>15,6 inch OLED 2.8K (2880 × 1620), 120 Hz</td>
+                    </tr>
+                    <tr>
+                        <th>Độ sáng và màu màn hình</th>
+                        <td>100% DCI-P3, độ sáng 400 nits, tối đa 600 nits HDR</td>
+                    </tr>
+                    <tr>
+                        <th>Hệ điều hành</th>
+                        <td>Windows 11 Home</td>
+                    </tr>
+                    <tr>
+                        <th>Pin</th>
+                        <td>67 Wh, pin Li-ion 4 cell</td>
+                    </tr>
+                    <tr>
+                        <th>Cổng kết nối</th>
+                        <td>USB4 Type-C, USB-C 3.2 Gen 2, USB-A 3.2 Gen 1, HDMI, jack âm thanh 3,5 mm</td>
+                    </tr>
+                    <tr>
+                        <th>Kết nối không dây</th>
+                        <td>Wi-Fi 6E, Bluetooth 5.3</td>
+                    </tr>
+                    <tr>
+                        <th>Webcam</th>
+                        <td>Webcam Full HD hồng ngoại hỗ trợ Windows Hello</td>
+                    </tr>
+                    <tr>
+                        <th>Bàn phím</th>
+                        <td>Bàn phím Chiclet có đèn nền và bàn phím số</td>
+                    </tr>
+                    <tr>
+                        <th>Khối lượng</th>
+                        <td>Khoảng 1,50 kg</td>
+                    </tr>
+                    <tr>
+                        <th>Kích thước</th>
+                        <td>35,48 × 22,66 × 1,49–1,58 cm</td>
+                    </tr>
+                    <tr>
+                        <th>Màu sắc</th>
+                        <td>Xanh Ponder Blue hoặc xám Basalt Gray</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" class="quay-lai-danh-sach">Quay về danh sách sản phẩm</button>
+        </section>
+        <section id="chi-tiet-vivobook-pro-15-n6506" class="chi-tiet-san-pham" hidden>
+            <!-- Ảnh và thông tin dòng máy: https://www.asus.com/laptops/for-home/vivobook/asus-vivobook-pro-15-oled-n6506/ -->
+            <h2>ASUS Vivobook Pro 15 OLED N6506</h2>
+            <img src="images/asus-vivobook-pro-15-n6506.jpg" alt="Laptop ASUS Vivobook Pro 15 OLED N6506" width="240">
+            <p>Giá tham khảo: <strong>31.990.000 đ</strong></p>
+            <button type="button" class="them-vao-gio" data-ma="VIVOBOOK-PRO-15-N6506">Thêm vào giỏ hàng</button>
+            <h3>Mô tả sản phẩm</h3>
+            <p>Màn hình OLED và cấu hình mạnh cho học thiết kế, dựng nội dung. Thông số có thể thay đổi theo phiên bản.</p>
+            <h3>Thông số kỹ thuật chi tiết</h3>
+            <div class="bang-cuon">
+                <table>
+                    <tr>
+                        <th>CPU</th>
+                        <td>Intel Core Ultra 7 155H, 16 nhân, 22 luồng, tối đa 4,8 GHz</td>
+                    </tr>
+                    <tr>
+                        <th>Chip AI</th>
+                        <td>Intel AI Boost NPU, tối đa 11 TOPS</td>
+                    </tr>
+                    <tr>
+                        <th>Card đồ họa</th>
+                        <td>NVIDIA GeForce RTX 4050 Laptop GPU, 6 GB GDDR6</td>
+                    </tr>
+                    <tr>
+                        <th>RAM</th>
+                        <td>16 GB DDR5</td>
+                    </tr>
+                    <tr>
+                        <th>Ổ cứng</th>
+                        <td>1 TB M.2 NVMe PCIe 4.0 SSD</td>
+                    </tr>
+                    <tr>
+                        <th>Màn hình</th>
+                        <td>15,6 inch OLED 3K (2880 × 1620), 120 Hz</td>
+                    </tr>
+                    <tr>
+                        <th>Độ sáng và màu màn hình</th>
+                        <td>100% DCI-P3, độ sáng 400 nits, tối đa 500 nits HDR</td>
+                    </tr>
+                    <tr>
+                        <th>Hệ điều hành</th>
+                        <td>Windows 11 Home</td>
+                    </tr>
+                    <tr>
+                        <th>Pin</th>
+                        <td>75 Wh, pin Li-ion 4 cell</td>
+                    </tr>
+                    <tr>
+                        <th>Cổng kết nối</th>
+                        <td>Thunderbolt 4 USB-C, 2 USB-A 3.2 Gen 1, HDMI, jack âm thanh 3,5 mm</td>
+                    </tr>
+                    <tr>
+                        <th>Kết nối không dây</th>
+                        <td>Wi-Fi 6E, Bluetooth 5.2</td>
+                    </tr>
+                    <tr>
+                        <th>Webcam</th>
+                        <td>Webcam 5 MP, có nắp che riêng tư</td>
+                    </tr>
+                    <tr>
+                        <th>Bàn phím</th>
+                        <td>Bàn phím Chiclet có đèn nền, bàn phím số và DialPad</td>
+                    </tr>
+                    <tr>
+                        <th>Khối lượng</th>
+                        <td>Khoảng 1,80 kg</td>
+                    </tr>
+                    <tr>
+                        <th>Kích thước</th>
+                        <td>35,57 × 23,53 × 1,99 cm</td>
+                    </tr>
+                    <tr>
+                        <th>Màu sắc</th>
+                        <td>Xám Earl Gray hoặc bạc Cool Silver</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" class="quay-lai-danh-sach">Quay về danh sách sản phẩm</button>
+        </section>
+        <section id="chi-tiet-zenbook-duo-ux8406" class="chi-tiet-san-pham" hidden>
+            <!-- Ảnh và thông tin dòng máy: https://www.asus.com/laptops/for-home/zenbook/asus-zenbook-duo-2024-ux8406/ -->
+            <h2>ASUS Zenbook DUO UX8406</h2>
+            <img src="images/asus-zenbook-duo-ux8406.png" alt="Laptop ASUS Zenbook DUO UX8406" width="240">
+            <p>Giá tham khảo: <strong>39.990.000 đ</strong></p>
+            <button type="button" class="them-vao-gio" data-ma="ZENBOOK-DUO-UX8406">Thêm vào giỏ hàng</button>
+            <h3>Mô tả sản phẩm</h3>
+            <p>Thiết kế hai màn hình hỗ trợ làm nhiều việc và trình bày nội dung. Thông số có thể thay đổi theo phiên bản.</p>
+            <h3>Thông số kỹ thuật chi tiết</h3>
+            <div class="bang-cuon">
+                <table>
+                    <tr>
+                        <th>CPU</th>
+                        <td>Intel Core Ultra 7 155H, 16 nhân, 22 luồng, tối đa 4,8 GHz</td>
+                    </tr>
+                    <tr>
+                        <th>Chip AI</th>
+                        <td>Intel AI Boost NPU, tối đa 11 TOPS</td>
+                    </tr>
+                    <tr>
+                        <th>Card đồ họa</th>
+                        <td>Intel Arc Graphics tích hợp</td>
+                    </tr>
+                    <tr>
+                        <th>RAM</th>
+                        <td>16 GB LPDDR5X</td>
+                    </tr>
+                    <tr>
+                        <th>Ổ cứng</th>
+                        <td>1 TB M.2 NVMe PCIe 4.0 SSD</td>
+                    </tr>
+                    <tr>
+                        <th>Màn hình</th>
+                        <td>Hai màn hình OLED 14 inch, cảm ứng; độ phân giải tùy phiên bản</td>
+                    </tr>
+                    <tr>
+                        <th>Độ sáng và màu màn hình</th>
+                        <td>100% DCI-P3, độ sáng 400 nits</td>
+                    </tr>
+                    <tr>
+                        <th>Hệ điều hành</th>
+                        <td>Windows 11 Home</td>
+                    </tr>
+                    <tr>
+                        <th>Pin</th>
+                        <td>75 Wh, pin Li-ion 4 cell</td>
+                    </tr>
+                    <tr>
+                        <th>Cổng kết nối</th>
+                        <td>2 Thunderbolt 4 USB-C, USB-A 3.2 Gen 1, HDMI, jack âm thanh 3,5 mm</td>
+                    </tr>
+                    <tr>
+                        <th>Kết nối không dây</th>
+                        <td>Wi-Fi 6E, Bluetooth 5.2</td>
+                    </tr>
+                    <tr>
+                        <th>Webcam</th>
+                        <td>Webcam Full HD hồng ngoại hỗ trợ Windows Hello</td>
+                    </tr>
+                    <tr>
+                        <th>Bàn phím</th>
+                        <td>Bàn phím tháo rời, hành trình phím 1,4 mm</td>
+                    </tr>
+                    <tr>
+                        <th>Khối lượng</th>
+                        <td>Khoảng 1,65 kg gồm thân máy và bàn phím</td>
+                    </tr>
+                    <tr>
+                        <th>Kích thước</th>
+                        <td>31,35 × 21,79 × 1,46–1,99 cm</td>
+                    </tr>
+                    <tr>
+                        <th>Màu sắc</th>
+                        <td>Xám Inkwell Gray</td>
                     </tr>
                 </table>
             </div>
