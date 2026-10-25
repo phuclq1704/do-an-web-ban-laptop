@@ -77,12 +77,7 @@ header {
     height: 20px;
 }
 
-@media(max-width:800px) {
-    .tim-kiem-dau-trang {
-        order: 4;
-        width: 100%;
-    }
-}
+
 
 #san-pham:not([hidden]) {
     display: flex;
@@ -142,7 +137,7 @@ header {
 
 }
 
-.tim-kiem-dau-trang input{
+.tim-kiem-dau-trang input {
     box-sizing: border-box;
     padding: 4px 6px;
     width: 150px;
@@ -152,6 +147,37 @@ header {
 
 .tim-kiem-dau-trang button {
     padding: 4px 8px;
+}
+
+@media (max-width: 940px) {
+    .tim-kiem-dau-trang {
+        order: 4;
+        flex: 0 0 100%;
+        min-width: 0;
+    }
+}
+
+@media (min-width: 521px) and (max-width: 645px) {
+    .tenCuaHang { order: 1; }
+    .lien-ket-header { order: 2; }
+    .danh-muc { order: 3; }
+
+    .tim-kiem-dau-trang {
+        order: 4;
+        flex: 1 1 220px;
+        width: auto;
+    }
+}
+
+@media (max-width: 520px) {
+    .tim-kiem-dau-trang { order: 3; }
+
+    .lien-ket-header {
+        order: 4;
+        width: 100%;
+        margin-left: 0;
+        justify-content: center;
+    }
 }
 
 #tim-kiem .nhom-loai-laptop {
